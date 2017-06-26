@@ -1,0 +1,38 @@
+.upd-count {
+
+    &.upd-count-rounded {
+        line-height: 1em !important;
+        background: $color-orange;
+        border-radius: $size-medium;
+        color: $color-white;
+        margin-left: $size-medium;
+        padding: $size-small;
+    }
+
+    &.upd-count-0 {
+        display: none;
+    }
+}
+
+/*
+//to match button height (input[type]=button and anchor button)
+.btn {
+    //line-height: 1.55 !important;
+    box-sizing: border-box;
+}
+
+.align {
+
+    &.align-center, &.align-right {
+
+        .btn {
+             //line-height: 1.55;
+             //margin-bottom: 0.7em;
+        }
+    }
+}
+
+a {
+    vertical-align: baseline;
+}
+*/
