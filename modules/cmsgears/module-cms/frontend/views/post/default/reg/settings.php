@@ -11,7 +11,7 @@ use cmsgears\cms\common\models\entities\Post;
 use cmsgears\files\widgets\AvatarUploader;
 use cmsgears\widgets\tag\TagMapper;
 use cmsgears\widgets\category\CategoryMapper;
-use cmsgears\widgets\category\CategoryAutoBox;
+use cmsgears\widgets\category\CategoryAuto;
 
 $viewPath =  realpath(dirname(__FILE__).'/../'); 
 $coreProperties = $this->context->getCoreProperties();
@@ -27,7 +27,7 @@ $this->title 	= 'Settings | ' . $coreProperties->getSiteTitle();
 	<h2 class="padding padding-medium-h"> Category And Tags </h2>
 	<div class="row ">
 		<div class="col col12x6">
-			<?= CategoryAutoBox::widget([
+			<?= CategoryAuto::widget([
 				'options' => [ 'id' => 'box-category-auto', 'class' => 'box-mapper-auto' ],
 				'type' => CmsGlobal::TYPE_POST,
 				'model' => $model,
@@ -43,8 +43,8 @@ $this->title 	= 'Settings | ' . $coreProperties->getSiteTitle();
 				'options' => [ 'id' => 'box-tag-mapper', 'class' => 'box-tag-mapper mapper-tag' ],
 				'loadAssets' => true,
 				'model' => $model,
-				'assignUrl' => "cms/post/assign-tags?slug=$model->slug&parent-type=$model->type&parent=true&typed=true",
-				'removeUrl' => "cms/post/remove-tag?slug=$model->slug&parent-type=$model->type&parent=true&typed=true"
+				'mapActionUrl' => "cms/post/assign-tags?slug=$model->slug&parent-type=$model->type&parent=true&typed=true",
+				'deleteActionUrl' => "cms/post/remove-tag?slug=$model->slug&parent-type=$model->type&parent=true&typed=true"
 			])?>
 		</div>	
 	</div>	

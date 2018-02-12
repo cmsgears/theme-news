@@ -6,7 +6,7 @@ use yii\helpers\Html;
 use cmsgears\widgets\dnav\DynamicNav;
 
 // SF Imports
-use themes\newstheme\Theme;
+use themes\news\Theme;
 ?>
 
 <header id="header-main" class="absolute width">

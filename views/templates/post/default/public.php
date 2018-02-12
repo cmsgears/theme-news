@@ -11,9 +11,9 @@ use cmsgears\widgets\comment\show\ShowComments;
 use cmsgears\core\common\models\resources\ModelComment;
 
 // Bizzlist Imports
-use themes\newstheme\Theme;
+use themes\news\Theme;
 
-$themePath		= Yii::getAlias( '@themes/newstheme' );
+$themePath		= Yii::getAlias( '@themes/news' );
 
 // Post Author
 $author			= $page->creator;

@@ -5,7 +5,7 @@ use cmsgears\widgets\dnav\DynamicNav;
 use cmsgears\widgets\text\TextWidget;
 
 // NGOFB Imports
-use themes\newstheme\Theme;
+use themes\news\Theme;
 
 $user			= Yii::$app->user->getIdentity();
 

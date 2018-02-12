@@ -3,7 +3,7 @@
 use cmsgears\cms\common\utilities\ContentUtil;
 
 // SF Imports
-use themes\newstheme\assets\PublicAssets;
+use themes\news\assets\PublicAssets;
 
 ContentUtil::initPage( $this );
 
@@ -11,7 +11,7 @@ PublicAssets::register( $this );
 
 // Common variables available for headers, sidebars and footers included within this layout
 $coreProperties = $this->context->getCoreProperties();
-$themePath		= Yii::getAlias( '@themes/newstheme' );
+$themePath		= Yii::getAlias( '@themes/news' );
 $user			= Yii::$app->user->getIdentity();
 ?>
 <?php $this->beginPage(); ?>

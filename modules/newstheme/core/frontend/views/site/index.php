@@ -146,13 +146,13 @@ $headerBanner = Yii::getAlias('@images').'/compresses/384X220-1jpg';
                  <div class="row bkg bkg-white padding padding-default">
                      <h4> Lorem Ipsum has been the industry's  </h4>
                      <div class="">
-                    <?= BlogPost::widget([
-						'templateDir' => yii::getAlias("@templates"), 
-						'template' =>  'widget/cmt-slider/',
-						'limit' => 6,
-						'wrapSingle' => false,
-						'pagination' => false
-					]) ?>
+                        <?= BlogPost::widget([
+                                'templateDir' => yii::getAlias("@templates"), 
+                                'template' =>  'widget/cmt-slider/',
+                                'limit' => 6,
+                                'wrapSingle' => false,
+                                'pagination' => false
+                        ]) ?>
                      </div>
                 </div>
             </div>
