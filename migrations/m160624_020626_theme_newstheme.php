@@ -61,7 +61,7 @@ class m160624_020626_theme_newstheme extends \yii\db\Migration {
 		$columns = [ 'createdBy', 'modifiedBy', 'name', 'slug', 'description', 'renderer', 'basePath', 'createdAt', 'modifiedAt', 'data' ];
 
 		$themes = [
-			[ $this->master->id, $this->master->id, 'SafariCities', 'safaricities', 'SafariCities Theme.', 'default', '@themes/safaricities', DateUtil::getDateTime(), DateUtil::getDateTime(), null ]
+			[ $this->master->id, $this->master->id, 'Newstheme', 'safaricities', 'Newstheme Theme.', 'default', '@themes/newstheme', DateUtil::getDateTime(), DateUtil::getDateTime(), null ]
 		];
 
 		$this->batchInsert( $this->cmgPrefix . 'core_theme', $columns, $themes );

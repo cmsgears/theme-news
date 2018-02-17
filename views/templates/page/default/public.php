@@ -2,7 +2,7 @@
 // CMG Imports
 use cmsgears\widgets\block\BasicBlock;
 
-$theme		= Yii::getAlias( '@themes/bizzlist' );
+$theme		= Yii::getAlias( '@themes/news' );
 $banner		= $content->banner;
 $bannerUrl	= isset( $banner ) ? $banner->getFileUrl() : null;
 ?>

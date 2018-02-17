@@ -2,7 +2,7 @@
 use cmsgears\widgets\block\BasicBlock;
 use cmsgears\widgets\blog\TagPost;
 use widgets\tags\FeaturedTags;
-$themePath		= Yii::getAlias( '@themes/newstheme' );
+$themePath		= Yii::getAlias( '@themes/news' );
 ?>
 <?php BasicBlock::begin([
 	'options' => [ 'id' => 'block-header', 'class' => 'block ' ],

@@ -6,7 +6,7 @@ use widgets\categories\FeaturedCategories;
 use widgets\tags\FeaturedTags;
 use cmsgears\widgets\blog\BlogPost;
 
-$themePath	= Yii::getAlias( '@themes/newstheme' );
+$themePath	= Yii::getAlias( '@themes/news' );
 ?>
 <div class="wrap-footer bkg bkg-secondary " id="footer">
     <footer class="content-90">
