@@ -5,7 +5,7 @@ use cmsgears\cms\common\config\CmsGlobal;
 use cmsgears\cms\common\utilities\ContentUtil;
 
 // SF Imports
-use themes\news\assets\BlogAssets;
+use themes\newstheme\assets\BlogAssets;
 
 ContentUtil::initPage( $this, [ 'type' => CmsGlobal::TYPE_PAGE ] );
 
@@ -13,7 +13,7 @@ BlogAssets::register( $this );
 
 // Common variables available for headers, sidebars and footers included within this layout
 $coreProperties = $this->context->getCoreProperties();
-$themePath		= Yii::getAlias( '@themes/news' );
+$themePath		= Yii::getAlias( '@themes/newstheme' );
 $user			= Yii::$app->user->getIdentity();
 ?>
 <?php $this->beginPage(); ?>

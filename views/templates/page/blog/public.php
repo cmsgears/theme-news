@@ -3,7 +3,7 @@
 use cmsgears\widgets\block\BasicBlock;
 use cmsgears\widgets\blog\BlogPost;
 
-$themePath		= Yii::getAlias( "@themes/news" );
+$themePath		= Yii::getAlias( "@themes/newstheme" );
 ?>
 
 <?php BasicBlock::begin([

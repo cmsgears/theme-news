@@ -8,7 +8,7 @@ use cmsgears\widgets\form\BasicForm;
 use cmsgears\widgets\text\TextWidget;
 
 // BizzList Imports
-use themes\news\Theme;
+use themes\newstheme\Theme;
 ?>
 
 

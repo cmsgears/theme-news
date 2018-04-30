@@ -3,7 +3,7 @@
 use cmsgears\widgets\dnav\DynamicNav;
 
 // SF Imports
-use themes\news\Theme;
+use themes\newstheme\Theme;
 ?>
 
 <span id='sidebar-knob' class='cmti cmti-2x cmti-menu'></span>

@@ -1,12 +1,12 @@
 <?php
 // SF Imports
-use themes\news\assets\PrivateAssets;
+use themes\newstheme\assets\PrivateAssets;
 
 PrivateAssets::register( $this );
 
 // Common variables available for headers, sidebars and footers included within this layout
 $coreProperties = $this->context->getCoreProperties();
-$themePath		= Yii::getAlias( '@themes/news' );
+$themePath		= Yii::getAlias( '@themes/newstheme' );
 $user			= Yii::$app->user->getIdentity();
 ?>
 <?php $this->beginPage(); ?>

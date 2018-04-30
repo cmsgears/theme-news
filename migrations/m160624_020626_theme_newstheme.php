@@ -61,7 +61,7 @@ class m160624_020626_theme_newstheme extends \yii\db\Migration {
 		$columns = [ 'createdBy', 'modifiedBy', 'name', 'slug', 'description', 'renderer', 'basePath', 'createdAt', 'modifiedAt', 'data' ];
 
 		$themes = [
-			[ $this->master->id, $this->master->id, 'Newstheme', 'safaricities', 'Newstheme Theme.', 'default', '@themes/newstheme', DateUtil::getDateTime(), DateUtil::getDateTime(), null ]
+			[ $this->master->id, $this->master->id, 'news', 'news', 'news Theme.', 'default', '@themes/newstheme', DateUtil::getDateTime(), DateUtil::getDateTime(), null ]
 		];
 
 		$this->batchInsert( $this->cmgPrefix . 'core_theme', $columns, $themes );
@@ -70,7 +70,7 @@ class m160624_020626_theme_newstheme extends \yii\db\Migration {
 		$this->update( $this->cmgPrefix . 'core_theme', [ 'default' => false ], [ 'default' => true ] );
 
 		// Make current as default
-		$this->update( $this->cmgPrefix . 'core_theme', [ 'default' => true ], "slug='safaricities'" );
+		$this->update( $this->cmgPrefix . 'core_theme', [ 'default' => true ], "slug='news'" );
 	}
 
 	private function insertThemeTemplates() {
@@ -92,13 +92,13 @@ class m160624_020626_theme_newstheme extends \yii\db\Migration {
 
 	private function insertObjects() {
 
-		$tFooterTemplate	= Template::findBySlugType( 'text-footer', CmsGlobal::TYPE_WIDGET );
+		$tFooterTemplate	= Template::findBySlugType( 'text-footer', CmsGlobal::TYPE_WIDGET , [ 'ignoreSite' => true]);
 
-		$columns = [ 'siteId', 'templateId', 'avatarId', 'bannerId', 'createdBy', 'modifiedBy', 'name', 'slug', 'icon', 'type', 'description', 'active', 'createdAt', 'modifiedAt', 'htmlOptions', 'content', 'data' ];
+		$columns = [ 'siteId', 'templateId', 'avatarId', 'bannerId', 'createdBy', 'modifiedBy', 'name', 'slug', 'icon', 'type', 'description', 'createdAt', 'modifiedAt', 'htmlOptions', 'content', 'data' ];
 
 		$objects = [
-			[ $this->site->id, NULL,NULL,NULL,1,1,'Main','main',NULL,'menu','Main Menu used on site header.',1,'2014-10-11 14:22:54','2014-10-11 14:22:54',NULL,NULL,'{"links":{"4":{"link":"1","pageId":"2","htmlOptions":"{\"id\":\"btn-login\"}","icon":"","order":"0","type":"page","name":"Login"},"3":{"address":"","label":"","htmlOptions":"","private":"0","relative":"0","icon":"","order":"0","type":"link"},"2":{"address":"","label":"","htmlOptions":"","private":"0","relative":"0","icon":"","order":"0","type":"link"},"0":{"address":"","label":"","htmlOptions":"","private":"0","relative":"0","icon":"","order":"0","type":"link"},"1":{"address":"","label":"","htmlOptions":"","private":"0","relative":"0","icon":"","order":"0","type":"link"},"5":{"link":"1","pageId":"3","htmlOptions":"{\"id\":\"btn-register\"}","icon":"","order":"1","type":"page","name":"Sign Up"}}}' ],
-			[ $this->site->id, $tFooterTemplate->id, NULL,NULL,1,1,'Footer Info','footer-info',NULL,'widget','Site Info displayed on footer',1,'2014-10-11 14:22:54','2014-10-11 14:22:54',NULL,NULL,'{"classPath":"","data":{"title":"Lorem Ipsum is not simply","info":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."}}' ],
+			[ $this->site->id, NULL,NULL,NULL,1,1,'Main','main',NULL,'menu','Main Menu used on site header.','2014-10-11 14:22:54','2014-10-11 14:22:54',NULL,NULL,'{"links":{"4":{"link":"1","pageId":"2","htmlOptions":"{\"id\":\"btn-login\"}","icon":"","order":"0","type":"page","name":"Login"},"3":{"address":"","label":"","htmlOptions":"","private":"0","relative":"0","icon":"","order":"0","type":"link"},"2":{"address":"","label":"","htmlOptions":"","private":"0","relative":"0","icon":"","order":"0","type":"link"},"0":{"address":"","label":"","htmlOptions":"","private":"0","relative":"0","icon":"","order":"0","type":"link"},"1":{"address":"","label":"","htmlOptions":"","private":"0","relative":"0","icon":"","order":"0","type":"link"},"5":{"link":"1","pageId":"3","htmlOptions":"{\"id\":\"btn-register\"}","icon":"","order":"1","type":"page","name":"Sign Up"}}}' ],
+			[ $this->site->id, $tFooterTemplate->id, NULL,NULL,1,1,'Footer Info','footer-info',NULL,'widget','Site Info displayed on footer','2014-10-11 14:22:54','2014-10-11 14:22:54',NULL,NULL,'{"classPath":"","data":{"title":"Lorem Ipsum is not simply","info":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."}}' ],
 		];
 
 		$this->batchInsert( $this->cmgPrefix . 'core_object', $columns, $objects );
@@ -124,17 +124,17 @@ class m160624_020626_theme_newstheme extends \yii\db\Migration {
 		$summary = "Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It\'s also called placeholder (or filler) text. It\'s a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout. Lorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero.";
 		$content = "Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It\'s also called placeholder (or filler) text. It\'s a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout. Lorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero.";
 
-		$columns = [ 'parentId', 'parentType', 'seoName', 'seoDescription', 'seoKeywords', 'seoRobot', 'views', 'referrals', 'summary', 'content', 'publishedAt' ];
+		$columns = [ 'parentId', 'parentType', 'seoName', 'seoDescription', 'seoKeywords', 'seoRobot', 'summary', 'content', 'publishedAt' ];
 
 		$pages	= [
-			[ Page::findBySlugType( 'services', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, 0, 0, $summary, $content, DateUtil::getDateTime() ],
-			[ Page::findBySlugType( 'faq', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, 0, 0, $summary, $content, DateUtil::getDateTime() ],
-			[ Page::findBySlugType( 'about-us', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, 0, 0, $summary, $content, DateUtil::getDateTime() ],
-			[ Page::findBySlugType( 'terms', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, 0, 0, $summary, $content, DateUtil::getDateTime() ],
-			[ Page::findBySlugType( 'privacy', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, 0, 0, $summary, $content, DateUtil::getDateTime() ],
-			[ Page::findBySlugType( 'financing', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, 0, 0, $summary, $content, DateUtil::getDateTime() ],
-			[ Page::findBySlugType( 'how-we-work', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, 0, 0, $summary, $content, DateUtil::getDateTime() ],
-			[ Page::findBySlugType( 'team', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, 0, 0, $summary, $content, DateUtil::getDateTime() ]
+			[ Page::findBySlugType( 'services', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, $summary, $content, DateUtil::getDateTime() ],
+			[ Page::findBySlugType( 'faq', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, $summary, $content, DateUtil::getDateTime() ],
+			[ Page::findBySlugType( 'about-us', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, $summary, $content, DateUtil::getDateTime() ],
+			[ Page::findBySlugType( 'terms', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, $summary, $content, DateUtil::getDateTime() ],
+			[ Page::findBySlugType( 'privacy', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, $summary, $content, DateUtil::getDateTime() ],
+			[ Page::findBySlugType( 'financing', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, $summary, $content, DateUtil::getDateTime() ],
+			[ Page::findBySlugType( 'how-we-work', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, $summary, $content, DateUtil::getDateTime() ],
+			[ Page::findBySlugType( 'team', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, $summary, $content, DateUtil::getDateTime() ]
 		];
 
 		$this->batchInsert( $this->cmgPrefix . 'cms_model_content', $columns, $pages );
@@ -143,17 +143,17 @@ class m160624_020626_theme_newstheme extends \yii\db\Migration {
 	private function configurePageTemplates() {
 
 		// Templates
-		$pageTemplate	= Template::findBySlugType( 'page', CmsGlobal::TYPE_PAGE );
+		$pageTemplate	= Template::findBySlugType( 'page', CmsGlobal::TYPE_PAGE ,[ 'ignoreSite' => true]);
 
 		// Pages
-		$servicesPage		= Page::findBySlugType( 'services', CmsGlobal::TYPE_PAGE );
-		$faqPage			= Page::findBySlugType( 'faq', CmsGlobal::TYPE_PAGE );
-		$aboutPage			= Page::findBySlugType( 'about-us', CmsGlobal::TYPE_PAGE );
-		$termsPage			= Page::findBySlugType( 'terms', CmsGlobal::TYPE_PAGE );
-		$privacyPage		= Page::findBySlugType( 'privacy', CmsGlobal::TYPE_PAGE );
-		$financingPage		= Page::findBySlugType( 'financing', CmsGlobal::TYPE_PAGE );
-		$workPage			= Page::findBySlugType( 'how-we-work', CmsGlobal::TYPE_PAGE );
-		$teamPage			= Page::findBySlugType( 'team', CmsGlobal::TYPE_PAGE );
+		$servicesPage		= Page::findBySlugType( 'services', CmsGlobal::TYPE_PAGE, [ 'ignoreSite' => true] );
+		$faqPage			= Page::findBySlugType( 'faq', CmsGlobal::TYPE_PAGE, [ 'ignoreSite' => true]);
+		$aboutPage			= Page::findBySlugType( 'about-us', CmsGlobal::TYPE_PAGE,[ 'ignoreSite' => true] );
+		$termsPage			= Page::findBySlugType( 'terms', CmsGlobal::TYPE_PAGE,[ 'ignoreSite' => true] );
+		$privacyPage		= Page::findBySlugType( 'privacy', CmsGlobal::TYPE_PAGE,[ 'ignoreSite' => true] );
+		$financingPage		= Page::findBySlugType( 'financing', CmsGlobal::TYPE_PAGE,[ 'ignoreSite' => true] );
+		$workPage			= Page::findBySlugType( 'how-we-work', CmsGlobal::TYPE_PAGE,[ 'ignoreSite' => true] );
+		$teamPage			= Page::findBySlugType( 'team', CmsGlobal::TYPE_PAGE,[ 'ignoreSite' => true] );
 
 		$pages			= [ $servicesPage->id, $faqPage->id, $aboutPage->id, $termsPage->id, $privacyPage->id, $financingPage->id, $workPage->id, $teamPage->id  ];
 		$pages			= join( ',', $pages );
@@ -164,7 +164,7 @@ class m160624_020626_theme_newstheme extends \yii\db\Migration {
 	private function configureTheme() {
 
 		// Theme
-		$mainTheme	= Theme::findBySlug( 'safaricities' );
+		$mainTheme	= Theme::findBySlug( 'news' );
 
 		// Site
 		$siteId		= $this->site->id;

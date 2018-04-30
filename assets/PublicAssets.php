@@ -1,5 +1,5 @@
 <?php
-namespace themes\news\assets;
+namespace themes\newstheme\assets;
 
 // Yii Imports
 use \Yii;

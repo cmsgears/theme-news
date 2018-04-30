@@ -1,5 +1,5 @@
 <?php
-namespace themes\news;
+namespace themes\newstheme;
 
 // Yii Imports
 use \Yii;
@@ -29,9 +29,9 @@ class Theme extends \cmsgears\core\common\base\Theme {
 	// Public
 
     public $pathMap = [
-        '@frontend/views' => '@themes/news/views',
-        '@cmsgears' => '@themes/news/modules/cmsgears',
-        '@news' => '@themes/news/modules/newstheme'
+        '@frontend/views' => '@themes/newstheme/views',
+        '@cmsgears' => '@themes/newstheme/modules/cmsgears',
+        '@news' => '@themes/newstheme/modules/newstheme'
     ];
 
 	// Initialisation -----------------------------------------------
@@ -41,7 +41,7 @@ class Theme extends \cmsgears\core\common\base\Theme {
         parent::init();
 
 		// The path for templates
-		Yii::setAlias( '@templates', '@themes/news/views/templates' );
+		Yii::setAlias( '@templates', '@themes/newstheme/views/templates' );
 	}
 }
 

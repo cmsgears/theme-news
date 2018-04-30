@@ -1,5 +1,5 @@
 <?php
-namespace themes\news\assets;
+namespace themes\newstheme\assets;
 
 // Yii Imports
 use \Yii;
@@ -13,7 +13,7 @@ class AssetBundle extends \yii\web\AssetBundle {
 	// Public ----
 
 	// Path Configuration
-	public $sourcePath	= '@themes/news/resources';
+	public $sourcePath	= '@themes/newstheme/resources';
 
 	// Position to load css
     public $cssOptions = [
