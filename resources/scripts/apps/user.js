@@ -1,122 +1,109 @@
-var user	= null;
+// == Application =========================
 
 jQuery( document ).ready( function() {
 
-	var user	= cmt.api.root.registerApplication( 'user', 'cmt.api.Application', { basePath: ajaxUrl } );
+	var app	= cmt.api.root.registerApplication( 'user', 'cmt.api.Application', { basePath: ajaxUrl } );
 
-	user.mapController( 'user', 'nt.controllers.UserController' );
+	// Map Controllers
+	app.mapController( 'user', 'blog.controllers.UserController' );
 
-	cmt.api.utils.request.register( user, jQuery( '[cmt-app=user]' ) );
+	// Map Services
+	app.mapService( 'user', 'blog.services.UserService' );
+
+	// Register Listeners
+	cmt.api.utils.request.register( app, jQuery( '[cmt-app=user]' ) );
+
+	// Event Listeners
+	app.getService( 'user' ).initListeners();
 });
-/*
-jQuery(document).ready( function() {
 
-	user		= new cmt.api.Application( { basePath: ajaxUrl } );
+// == Controller Namespace ================
 
-	var userAppControllers		= [];
+// == User Controller =====================
 
-	userAppControllers[ 'user' ] 	= 'UserController';
+blog.controllers.UserController = function() {};
 
-	jQuery( '[cmt-app=user]' ).cmtRequestProcessor({
-		app: user,
-		controllers: userAppControllers
-	});
-});
-*/
-// FormController ----------------------------------------
+blog.controllers.UserController.inherits( cmt.api.controllers.RequestController );
 
-// UserController --------------------------------------------
-nt.controllers.UserController	= function() {};
+blog.controllers.UserController.prototype.avatarActionSuccess = function( requestElement, response ) {
 
-nt.controllers.UserController.inherits( cmt.api.controllers.RequestController );
+	var uploader = requestElement.closest( '.file-uploader' );
 
-nt.controllers.UserController.prototype.avatarActionPre = function( requestElement ) {
-	 return true;
+	// Update Header Popuout
+	jQuery( '.popout-group-main .wrap-user .fa-user' ).remove();
+	jQuery( '.popout-group-main .wrap-user .user-avatar' ).remove();
+	jQuery( '.popout-group-main .wrap-user' ).prepend( '<img class="user-avatar" src="' + response.data.thumbUrl + '" />' );
+
+	// Update Uploader
+	uploader.find( '.post-action' ).hide();
+};
+
+blog.controllers.UserController.prototype.clearAvatarActionSuccess = function( requestElement, response ) {
+
+	var uploader = requestElement.closest( '.file-uploader' );
+
+	// Update Header Popuout
+	jQuery( '.popout-group-main .wrap-user .fa-user' ).remove();
+	jQuery( '.popout-group-main .wrap-user .user-avatar' ).remove();
+	jQuery( '.popout-group-main .wrap-user' ).prepend( '<span class="fa fa-user icon"></span>' );
+
+	// Update Uploader
+	uploader.find( '.file-wrap .file-data' ).html( '<i class="cmti cmti-5x cmti-user"></i>');
+	uploader.find( '.file-clear' ).hide();
+};
+
+blog.controllers.UserController.prototype.profileActionSuccess = function( requestElement, response ) {
+
+	// Profile success
+};
+
+blog.controllers.UserController.prototype.accountActionSuccess = function( requestElement, response ) {
+
+	// Show old password field
+	requestElement.find( '.data-crud-wrap .hidden-easy' ).removeClass( 'hidden-easy' );
+};
+
+blog.controllers.UserController.prototype.addressActionSuccess = function( requestElement, response ) {
+
+	// Address success
+};
+
+blog.controllers.UserController.prototype.settingsActionSuccess = function( requestElement, response ) {
+
+	// Settings success
+};
+
+blog.controllers.UserController.prototype.workActionSuccess = function( requestElement, response ) {
+
+	// Settings success
+};
+
+// == Card Service ========================
+
+blog.services.UserService = function() {};
+
+blog.services.UserService.inherits( cmt.api.services.BaseService );
+
+blog.services.UserService.prototype.initListeners = function() {
+
+	//var self = this;
 }
 
-nt.controllers.UserController.prototype.avatarActionSuccess = function( requestElement, response ) {
+// == Direct Calls ========================
 
-	if( success ) {
-	   
-		//requestElement.closest( '.post-action' ).css('display':'none');
+function updateUserAttribute( key, value ) {
 
-	}
-};
-/*
-UserController	= function() {};
+	cmt.utils.ajax.triggerPost( ajaxUrl + "user/set-attribute", "Meta[key]=" + key + "&Meta[value]=" + value );
+}
 
-UserController.inherits( cmt.api.controllers.BaseController );
+function updateUserConfig( key, value ) {
 
-UserController.prototype.avatarActionPre = function( requestElement, response ) {
+	cmt.utils.ajax.triggerPost( ajaxUrl + "user/set-config", "Meta[key]=" + key + "&Meta[value]=" + value );
+}
 
-    return true;
-};
+function removeUserConfig( key ) {
 
-UserController.prototype.avatarActionPost = function( success, requestElement, response ) {
+	cmt.utils.ajax.triggerPost( ajaxUrl + "user/remove-config", "Meta[key]=" + key );
+}
 
-	if( success ) {
-	    alert('hello');
-	   // requestElement.closest( '.post-action' ).css('display':'none');
-
-	}
-};
-*/
-
-nt.controllers.UserController.prototype.profileActionSuccess = function( requestElement, response ) {
-
-	if( success ) {
-
-	}
-};
-
-nt.controllers.UserController.prototype.accountActionSuccess = function( requestElement, response ) {
-
-	if( success ) {
-
-	}
-};
-
-nt.controllers.UserController.prototype.addressActionSuccess = function( requestElement, response ) {
-
-	if( success ) {
-
-	}
-};
-
-nt.controllers.UserController.prototype.settingsActionSuccess = function( requestElement, response ) {
-
-	if( success ) {
-
-	}
-};
-
-/*
-UserController.prototype.profileActionPost = function( success, requestElement, response ) {
-
-	if( success ) {
-
-		
-	}
-};
-
-UserController.prototype.accountActionPost = function( success, requestElement, response ) {
-
-	if( success ) {
-
-	}
-};
-
-UserController.prototype.addressActionPost = function( success, requestElement, response ) {
-
-	if( success ) {
-
-	}
-};
-
-UserController.prototype.settingsActionPost = function( success, requestElement, response ) {
-
-	if( success ) {
-
-	}
-};
-*/
+// == Additional Methods ==================

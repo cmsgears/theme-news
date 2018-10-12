@@ -1,0 +1,15 @@
+.container-main {
+	margin-top: 80px;
+
+	@include responsive-max( screen-tablet-large ) {
+		margin-top: 50px;
+	}
+}
+
+.container-main-landing {
+	margin-top: 0;
+
+	@include responsive-max( screen-tablet-large ) {
+		margin-top: 0px;
+	}
+}

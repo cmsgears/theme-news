@@ -6,18 +6,32 @@ use yii\helpers\Html;
 use cmsgears\widgets\elements\Nav;
 
 // SF Imports
+use themes\news\Theme;
 ?>
-
-<header id="header-main">
-	<div class="header-inner relative clearfix">
-            <div class="row bkg bkg-secondary">
-		<div class="col col12x10">
-			<div id="btn-mobile-menu" class="bkg padding padding-default bkg-secondary-d text text-white inline-block font-size font-size-default"><i class="cmti cmti-menu"></i></div>
-               
+<header id="header-main" class="header header-basic header-basic-duo header-fixed shadow shadow-primary">
+	<div class="row">
+		<div class="header-logo">
+			<div class="logo">
+				<?= Html::a( "<img src=\"" . Yii::getAlias( '@images' ) . "/logo.png\">", [ '/' ], null ) ?>
+			</div>
+			<div class="logo-small">
+				<?= Html::a( "<img src=\"" . Yii::getAlias( '@images' ) . "/logo-small.png\">", [ '/' ], null ) ?>
+			</div>
 		</div>
-		<div class="col col12x2 clearfix ">
-			<div class="logo align align-center padding padding-default"><?=Html::a( "<img class='fluid' src='" . Yii::getAlias( '@images' ) . "/icons/logo.png'>", [ '/' ], null )?></div>
+		<?= Nav::widget([
+			'view' => $this, 'slug' => Theme::MENU_SECONDARY,
+			'options' => [ 'id' => 'menu-main', 'class' => 'nav uppercase' ]
+		])?>
+		<div id="mobile-actions">
+			<span id="btn-menu-mobile" class="mobile-action">
+				<i class="cmti cmti-menu"></i>
+			</span>
 		</div>
-            </div>    
+	</div>
+	<div id="menu-mobile-wrap" class="relative">
+		<?= Nav::widget([
+			'view' => $this, 'slug' => Theme::MENU_SECONDARY,
+			'options' => [ 'id' => 'menu-main-mobile', 'class' => 'vnav uppercase' ]
+		])?>
 	</div>
 </header>

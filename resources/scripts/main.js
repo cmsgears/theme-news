@@ -6,179 +6,207 @@ jQuery( document ).ready( function() {
 
 	initListeners();
 	
-	initBlogAnimated();
+	initDatePickers();
+
+	initWindowResize();
 	
-	
+	initWindowScroll();
 });
+
+// == Pre Loaders =========================
 
 function initPreloaders() {
 
 	// Hide global pre-loader spinner
 	jQuery( '.container-main' ).imagesLoaded( { background: true }, function() {
 
+		jQuery( '#pre-loader-main .spinner' ).addClass( 'animate animate-zoom-out' );
 		jQuery( '#pre-loader-main' ).fadeOut( 'slow' );
 	});
 }
 
+// == CMT JS ==============================
+
 function initCmgTools() {
 
-	// Page Blocks
-	if( jQuery().cmtBlock ) {
+	// Blocks
+	jQuery( '.block' ).cmtBlock({
+		// Generic
+		halfHeight: true,
+		heightAuto: true,
+		// Block Specific - Ignores generic
+		blocks: {
+			'block-auto': { autoHeight: true, heightAuto: true },
+			'block-half': { halfHeight: true },
+			'block-qtf': { qtfHeight: true },
+			'block-full': { fullHeight: true },
+			'block-half-auto': { halfHeight: true, heightAuto: true },
+			'block-qtf-auto': { qtfHeight: true, heightAuto: true },
+			'block-full-auto': { fullHeight: true, heightAuto: true },
+			'block-half-mauto': { halfHeight: true, heightAutoMobile: true, heightAutoMobileWidth: 1024 },
+			'block-qtf-mauto': { qtfHeight: true, heightAutoMobile: true, heightAutoMobileWidth: 1024 },
+			'block-full-mauto': { fullHeight: true, heightAutoMobile: true, heightAutoMobileWidth: 1024 }
+		}
+	});
 
-		jQuery( '.block' ).cmtBlock({
-			// Generic
-			halfHeight: true,
-			heightAuto: true,
-			// Block Specific - Ignores generic
-			blocks: { 'landing-slider-block' : { fullHeight: false, halfHeight: false },
-                            'landing-video': { fullHeight: false, halfHeight: false, height: "50" },
-                            'landing-static': { fullHeight: false, halfHeight: false },
-                                'news-roller': { fullHeight: false, halfHeight: false },
-                                'landing-form': { fullHeight: false, halfHeight: false },
-				'block-header': { fullHeight: false, halfHeight: false },
-				'block-public': { fullHeight: true, heightAutoMobile: true, heightAutoMobileWidth: 1024 },
-				'block-form': { fullHeight: true, heightAutoMobile: true, heightAutoMobileWidth: 1024 },
-				'block-page': { halfHeight: true, height: "500" }
-			}
-		});
-	}
+	// Perspective Header
+	jQuery( '#header-main' ).cmtHeader( { scrollDistance: 280 } );
+
+	// Smooth Scroll
+	jQuery( '.smooth-scroll' ).cmtSmoothScroll();
+
+	// Box Forms
+	jQuery( '.box-form' ).cmtFormInfo();
+
+	// Ratings
+	jQuery( '.cmt-rating' ).cmtRate();
+
+	jQuery( '.rating-emoticons' ).cmtRate({
+		same: [ 'cmti cmti-2x cmti-emoticons-sad', 'cmti cmti-2x cmti-emoticons-sulk', 'cmti cmti-2x cmti-emoticons-intense', 'cmti cmti-2x cmti-emoticons-hopeful', 'cmti cmti-2x cmti-emoticons-happy' ],
+		emptyColor: '#7F7F7F'
+	});
+
+	// Select
+	jQuery( '.cmt-select' ).cmtSelect( { iconHtml: '<span class="fa fa-caret-down"></span>' } );
+	jQuery( '.cmt-select-c' ).cmtSelect( { iconHtml: '<span class="fa fa-caret-down"></span>', copyOptionClass: true } );
+	jQuery( '.cmt-select-s' ).cmtSelect( { iconHtml: '<span class="fa fa-caret-down"></span>', wrapperClass: 'element-small' } );
+
+	// Checkboxes
+	jQuery( '.cmt-checkbox' ).cmtCheckbox();
+
+	// Field Groups
+	jQuery( '.cmt-field-group' ).cmtFieldGroup();
 
 	// File Uploader
-	if( jQuery().cmtFileUploader ) {
-
-		jQuery( '.file-uploader' ).cmtFileUploader();
-	}
-
-        //cmt slider 
-        if( jQuery().cmtSlider ) {
-
-		jQuery( '.cmt-slider' ).cmtSlider({
-                    lControlContent: '<i class="cmti cmti-arrow-left cmti-2x valign-center"></i>',
-			rControlContent: '<i class="cmti cmti-arrow-right cmti-2x valign-center"></i>'
-                });
-	}
-        
+	jQuery( '.file-uploader' ).cmtFileUploader();
 
 	// Popups
-	if( jQuery().cmtPopup ) {
+	jQuery( '.popup' ).cmtPopup();
 
-		jQuery( '.popup' ).cmtPopup();
-		
-	}
+	// Popouts
+	jQuery( '.popout-group' ).cmtPopoutGroup();
 
-	// Sliding Menu
-	if( jQuery().cmtSlidingMenu ) {
+	// Auto Fillers
+	jQuery( '.auto-fill' ).cmtAutoFill();
 
-		jQuery( '#popup-menu-main' ).cmtSlidingMenu( { showTrigger: '#btn-mobile-menu', hideTrigger: '#btn-feedback', mainMenu: true, position: 'left' } );
-	}
-        
-	// Custom Select
-	if( jQuery().cmtSelect ) {
+	// Tabs
+	jQuery( '.tabs' ).cmtTabs();
 
-		jQuery( '.cmt-select' ).cmtSelect( { iconHtml: '<span class="cmti cmti-chevron-down"></span>' } );
-	}
+	// Accordians
+	jQuery( '.accordian' ).cmtAccordian();
 
-	// Custom Checkbox
-	if( jQuery().cmtCheckbox ) {
+	// Grid
+	jQuery( '.grid-data' ).cmtGrid();
 
-		jQuery( '.cmt-checkbox' ).cmtCheckbox();
-	}
+	// Actions
+	jQuery( '.cmt-actions' ).cmtActions();
 
-	// Form with Info
-	if( jQuery().cmtFormInfo ) {
+	// Auto Hide
+	jQuery( '.cmt-auto-hide' ).cmtAutoHide();
 
-		jQuery( '.box-form' ).cmtFormInfo();
-	}
+	// Icon Picker
+	jQuery( '.icon-picker' ).cmtIconPicker();
 
-	// Google Map
-	if( jQuery().latLongPicker ) {
+	// Time Picker
+	jQuery( '.timepicker' ).cmtTimePicker();
 
-		jQuery( '.lat-long-picker' ).latLongPicker();
-	}
-       
+	jQuery( '.cmt-slider' ).cmtSlider({
+		lControlContent: "<i class=\"fa fa-angle-left valign-center\"></i>",
+		rControlContent: "<i class=\"fa fa-angle-right valign-center\"></i>"
+	});
 }
+
+// == JS Listeners ========================
 
 function initListeners() {
 
-	// custom scroller
-	if( jQuery().mCustomScrollbar ) {
+	// Main Menu
+	jQuery( '#btn-menu-mobile' ).click( function() {
 
-		jQuery( ".cscroller" ).mCustomScrollbar( { autoHideScrollbar: true } );
-	}
-}
-
-
-function initBlogAnimated(){
-
-    jQuery( ".blog .post" ).hover( function() {	
-
-	var info	= jQuery( this ).find( ".post-info" );
-	var show	= 'fadeInDown';
-	var hide	= 'fadeOut';
-	
-       if( jQuery( info ).hasClass( "animated "+show ) ) {
-	    jQuery( info ).removeClass( "animated "+show );
-	    jQuery( info ).addClass( "animated "+hide );
-	    return true;
-	}		
-	if( jQuery( info ).hasClass( "animated "+hide ) ) {
-	    jQuery( info ).show();
-	    jQuery( info ).removeClass( "animated "+hide );
-	    jQuery( info ).addClass( "animated "+show );
-	}		
-	else {		
-	    jQuery( info ).show();
-	    jQuery( info ).addClass( "animated "+show );
-	}   
-    } );
-}
-
-function initAttributeIndexing( model ) {
-
-	jQuery( ".wrap-attributes .attribute" ).each( function( i, el ) {
-
-		var deleteAttribute	= jQuery( this ).find( ".delete-attribute" );
-		var attributeCount	= jQuery( this ).find( ".attribute-count" );
-		var attributeTitle	= jQuery( this ).find( ".attribute-title" );
-		var message			= jQuery( this ).find( ".message" );
-		var requestForm		= jQuery( this ).find( ".cmt-request" );
-		var hiddenAttribute	= jQuery( this ).find( ".hidden-attribute" );
-
-		jQuery( this, ",", deleteAttribute, ",", attributeTitle, ",", message, ",", requestForm, ",", hiddenAttribute ).attr( "id", null );
-
-		jQuery( this ).attr( "id", "attribute-"+i );
-
-		jQuery( deleteAttribute ).attr( "id", "frm-delete-attr-"+i );
-
-		jQuery( attributeCount ).val( "attribute-"+i );
-
-		jQuery( attributeTitle ).attr( {
-
-			"id": "listingattribute-" +i+ "-name",
-			"name": model+"Attribute[" +i+ "][name]"
-		} );
-
-		jQuery( attributeTitle ).parent().removeAttr("class");
-		jQuery( attributeTitle ).parent().attr( "class", "form-group field-listingattribute-" +i+ "-name required" );
-
-		jQuery( message ).attr( {
-
-			"id": "listingattribute-" +i+ "-value",
-			"name": model+"Attribute[" +i+ "][value]"
-		} );
-
-		jQuery( message ).parent().removeAttr("class");
-		jQuery( message ).parent().attr( "class", "form-group field-listingattribute-" +i+ "-value" );
-
-		jQuery( requestForm ).attr( "id", "frm-delete-attr-"+i );
-
-		jQuery( hiddenAttribute ).attr( {
-
-			"id": "listingattribute-" +i+ "-id",
-			"name": model+"Attribute[" +i+ "][id]"
-		} );
-
-		jQuery( hiddenAttribute ).parent().removeAttr( "class" );
-		jQuery( hiddenAttribute ).parent().attr( "class", "form-group field-listingattribute-" +i+ "-id" );
+		jQuery( '#menu-main-mobile' ).slideToggle();
 	});
+
+	// Custom scroller
+	jQuery( '.cscroller' ).mCustomScrollbar( { autoHideScrollbar: true } );
+
+	// Auto save checkbox action
+	jQuery( '.cmt-checkbox input' ).on( 'input', function() {
+
+		jQuery( this ).parent().find( '.cmt-click' ).click();
+	});
+}
+
+function initDatePickers() {
+
+	// Datepicker
+	var datepickers = jQuery( '.datepicker' );
+
+	datepickers.each( function() {
+
+		var datepicker = jQuery( this );
+
+		var start	= datepicker.attr( 'ldata-start' );
+		var end		= datepicker.attr( 'ldata-end' );
+
+		if( null != start && null != end ) {
+
+			datepicker.datepicker({
+				dateFormat: 'yy-mm-dd',
+				minDate: start,
+				maxDate: end
+			});
+		}
+		else if( null != start ) {
+
+			datepicker.datepicker({
+				dateFormat: 'yy-mm-dd',
+				minDate: start
+			});
+		}
+		else if( null != end ) {
+
+			datepicker.datepicker({
+				dateFormat: 'yy-mm-dd',
+				maxDate: end
+			});
+		}
+		else {
+
+			datepicker.datepicker({
+				dateFormat: 'yy-mm-dd'
+			});
+		}
+	});
+}
+
+// == Window Resize, Scroll ===============
+
+function initWindowResize() {
+
+	//resizeElements();
+
+	jQuery( window ).resize( function () {
+
+		//resizeElements();
+	});
+}
+
+function initWindowScroll() {
+
+	jQuery( window ).scroll( function() {
+
+		var scrolledY = jQuery( window ).scrollTop();
+
+		configScrollAt( scrolledY );
+	});
+}
+
+function resizeElements() {
+
+	// Resize elements on window resize
+}
+
+function configScrollAt() {
+
+	// Show hidden elements with animation effects
 }

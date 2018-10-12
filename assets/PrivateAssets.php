@@ -1,41 +1,73 @@
 <?php
-namespace themes\newstheme\assets;
+/**
+ * This file is part of CMSGears Framework. Please view License file distributed
+ * with the source code for license details.
+ *
+ * @link https://www.cmsgears.org/
+ * @copyright Copyright (c) 2015 VulpineCode Technologies Pvt. Ltd.
+ */
 
-// Yii Imports
-use \Yii;
-use yii\web\View;
-use yii\helpers\Url;
+namespace themes\news\assets;
 
+/**
+ * PrivateAssets registers the assets specific to private pages.
+ *
+ * @since 1.0.0
+ */
 class PrivateAssets extends AssetBundle {
 
 	// Variables ---------------------------------------------------
 
-	// Public ----
+	// Globals -------------------------------
 
-	// Load css
-    public $css     = [
+	// Constants --------------
+
+	// Public -----------------
+
+	// Protected --------------
+
+	// Variables -----------------------------
+
+	// Public -----------------
+
+	/**
+	 * @inheritdoc
+	 */
+    public $css = [
 		'styles/private.css'
     ];
 
-	// Constructor and Initialisation ------------------------------
+    // Protected --------------
 
-	public function __construct()  {
+    // Private ----------------
 
-		parent::__construct();
+    // Traits ------------------------------------------------------
+
+    // Constructor and Initialisation ------------------------------
+
+	public function init() {
+
+		parent::init();
+
+		$this->js[] = 'scripts/templates/private.js';
+		$this->js[] = 'scripts/apix/private.js';
+		$this->js[] = 'scripts/apps/private.js';
+		$this->js[] = 'scripts/apps/user.js';
+
+		$this->depends[] = 'themes\news\assets\vapps\CoreAssets';
+		$this->depends[] = 'themes\news\assets\vapps\NotifyAssets';
 	}
 
-	// Additional Assets Registration ------------------------------
+    // Instance methods --------------------------------------------
 
-	public function registerAssetFiles( $view ) {
+    // Yii interfaces ------------------------
 
-		parent::registerAssetFiles( $view );
+    // Yii parent classes --------------------
 
-		$rootUrl = Url::toRoute( '/', true );
+    // CMG interfaces ------------------------
 
-    	$siteUrl = "var fileUploadUrl	= '" .$rootUrl . "apix/file/file-handler';";
+    // CMG parent classes --------------------
 
-		$view->registerJs( $siteUrl, View::POS_END );
-	}
+    // PrivateAssets -------------------------
+
 }
-
-?>

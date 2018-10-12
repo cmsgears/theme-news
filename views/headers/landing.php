@@ -1,36 +1,42 @@
 <?php
 // Yii Imports
 use yii\helpers\Html;
-use yii\helpers\Url;
 
 // CMG Imports
 use cmsgears\widgets\elements\Nav;
 
-// SF Imports
-use themes\newstheme\Theme;
-?>
+use themes\news\Theme;
 
-<header id="header-main" class="width" style="background-image: url( <?= Yii::getAlias( '@images' ) .'/header-banner.jpg' ?> )">
-	<div class="row padding padding-default header-content content-80" >
-		<div class="col col12x6">
-			<div class="logo"><?=Html::a( "<img class='fluid' src='" . Yii::getAlias( '@images' ) . "/icons/logo.png'>", [ '/' ], null )?></div>
+$banner			= Yii::$app->core->site->banner;
+$headerClass	= isset( $banner ) ? 'header-basic header-landing header-banner' : 'header-basic header-landing header-banner-no';
+?>
+<header class="header <?= $headerClass ?> shadow shadow-primary">
+	<?php if( isset( $banner ) ) { ?>
+		<div class="max-area bkg-image layer" style="background-image:url(<?= $banner->getFileUrl() ?>);"></div>
+		<div class="texture texture-black layer layer-1"></div>
+	<?php } ?>
+	<div class="row layer layer-2">
+		<div class="header-logo">
+			<div class="logo">
+				<?= Html::a( "<img src=\"" . Yii::getAlias( '@images' ) . "/logo.png\">", [ '/' ], null ) ?>
+			</div>
 		</div>
-		<div class="col col12x6  ">
-			<ul class="hnav-basic right">
-			<li><a href="<?= Url::to( ['/login'] ) ?>"><span class="fas fa-user inline-block"><span class="padding padding-left-default">login</span></span></a></li>
-			<li><a href="<?= Url::to( ['/login'] ) ?>"><span class="fas fa-sign-in-alt inline-block"><span class="padding padding-left-default">sign Up</span></span></a></li>
-			</ul>
+		<div id="mobile-actions">
+			<span id="btn-menu-mobile" class="mobile-action">
+				<i class="cmti cmti-menu"></i>
+			</span>
 		</div>
 	</div>
-    <div class="content-80">
-		<ul class="hnav-basic"> 
-			<li><a href="<?= Url::to(['/search'] )?>">Fasion</a></li>
-			<li><a href="<?= Url::to(['/search'] )?>">search</a></li>
-			<li><a href="<?= Url::to(['/search'] )?>">search</a></li>
-			<li><a href="<?= Url::to(['/search'] )?>">search</a></li>
-			<li><a href="<?= Url::to(['/search'] )?>">search</a></li>
-			<li><a href="<?= Url::to(['/privacy'] )?>">privacy</a></li>
-			<li><a href="<?= Url::to(['/login'] )?>">login</a></li>
-		</ul>
+	<div id="menu-mobile-wrap" class="relative">
+		<?= Nav::widget([
+			'view' => $this, 'slug' => Theme::MENU_MAIN,
+			'options' => [ 'id' => 'menu-main-mobile', 'class' => 'vnav uppercase' ]
+		])?>
 	</div>
 </header>
+<div class="menu-main-wrap row row-xlarge">
+	<?= Nav::widget([
+		'view' => $this, 'slug' => Theme::MENU_MAIN,
+		'options' => [ 'id' => 'menu-main', 'class' => 'nav uppercase' ]
+	])?>
+</div>

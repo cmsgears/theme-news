@@ -1,17 +1,19 @@
 <?php
 // CMG Imports
 use cmsgears\cms\common\utilities\ContentUtil;
+use cmsgears\core\common\utilities\CodeGenUtil;
 
-// SF Imports
-use themes\newstheme\assets\PublicAssets;
+use themes\news\assets\InlineAssets;
 
 ContentUtil::initPage( $this );
 
-PublicAssets::register( $this );
+InlineAssets::register( $this );
+
+$this->registerAssetBundle( 'public' );
 
 // Common variables available for headers, sidebars and footers included within this layout
 $coreProperties = $this->context->getCoreProperties();
-$themePath		= Yii::getAlias( '@themes/newstheme' );
+$themePath		= Yii::getAlias( '@themes/news' );
 $user			= Yii::$app->user->getIdentity();
 ?>
 <?php $this->beginPage(); ?>
@@ -20,10 +22,11 @@ $user			= Yii::$app->user->getIdentity();
     <head>
 		<?php include "$themePath/views/headers/main.php"; ?>
     </head>
-    <body>
+    <body id="scroll-top">
+    	<?= CodeGenUtil::generateSeoH1( $this->params ) ?>
         <?php $this->beginBody(); ?>
-		<div id='pre-loader-main' class='max-area-cover'>
-			<div class='valign-center cmti cmti-5x cmti-spinner-1 spin'></div>
+		<div id="pre-loader-main" class="pre-loader valign-center align align-center">
+			<div class="spinner cmti cmti-3x cmti-spinner-1 spin"></div>
 		</div>
 		<?php
 			if( isset( $user ) ) {
@@ -35,15 +38,14 @@ $user			= Yii::$app->user->getIdentity();
 				include "$themePath/views/headers/public.php";
 			}
 		?>
-        
-         <?php include "$themePath/views/includes/menu-main.php"; ?>
-        <div class='container container-main'>
-	        <div class='wrap-content wrap-content-main'>
-	        	<div class='content'>
+        <div class="container container-main">
+	        <div class="content-wrap content-main-wrap">
+	        	<div class="content">
 	        		<?= $content ?>
 	        	</div>
 	        </div>
         </div>
+        <?php include "$themePath/views/footers/public.php"; ?>
         <?php $this->endBody(); ?>
     </body>
 </html>

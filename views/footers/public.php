@@ -1,64 +1,44 @@
 <?php
-// Yii Imports
-use yii\helpers\Url;
+// CMG Imports
+use cmsgears\widgets\elements\Nav;
+use cmsgears\widgets\blog\PostWidget;
+use cmsgears\widgets\newsletter\FollowMeWidget;
 
-use widgets\categories\FeaturedCategories;
-use widgets\tags\FeaturedTags;
-use cmsgears\widgets\blog\BlogPost;
-
-$themePath	= Yii::getAlias( '@themes/newstheme' );
+// News Imports
+use themes\news\Theme;
 ?>
-<div class="wrap-footer bkg bkg-secondary " id="footer">
-    <footer class="">
-            <div class="filler-height filler-height-medium">
-            </div>    
-            <div class="row row-xlarge">
-				<div class="col col12x4 text text-white padding padding-right-medium ">
-                    <h3 class="border-bottom footer-title">
-                        Instagram post
-                    </h3>
-					<div class="filler-height"></div>
-                      <?= BlogPost::widget([
-                'templateDir' => yii::getAlias("@templates").'/widget/blog', 
-                //'template' =>  'widget/blog/banner',
-                'limit' => 6,
-					'wrapSingle' => false,	  
-                'pagination' => false ]) ?>
-                      
-                </div>   
-                <div class="col col12x4 text text-white padding padding-medium-h">
-                    <h3 class=" border-bottom footer-title">
-                        Categories
-                    </h3>
-					<div class="filler-height"></div>
-                    <?php FeaturedTags::begin([ ]);?>
-                    <?php FeaturedTags::end() ?>
-                    
-                </div>  
-                <div class="col col12x4 text text-white align align-center padding padding-left-medium">
-					<div class="padding padding-medium border border-bottom">
-						<img class="fluid" src="<?= Url::to(  Yii::getAlias( '@images' ) . '/icons/logo.png') ?>  ">
-					</div>
-					<div class="filler-height"></div>
-					<ul class="hnav-basic"> 
-						<li class="fab fa-twitter fa-2x padding padding-default"></li>
-						<li class="fab fa-facebook-f fa-2x padding padding-default"></li>
-						<li class="fab fa-instagram fa-2x padding padding-default"></li>
-					</ul>
-                </div>  
-            </div> 
-			<div class="filler-height"></div>
-			<div class="row row-xlarge">
-				<div class="col col1">
-					<h3 class="text text-white border-bottom footer-title">Landing topics</h3>
-					<div class="filler-height"></div>
-				</div>	
-			</div>
-        </footer>   
-    <div class="filler-height filler-height-medium bkg bkg-secondary">
-    </div> 
-    
-</div>
-<footer class="footer-copyright bkg bkg-black align align-center">
-		Copyright © <?= date( 'Y' ) ?> <?= $coreProperties->getSiteName() ?>. All Rights Reserved.
-	</footer>
+<footer class="footer footer-basic footer-main">
+	<div class="footer-content row row-xlarge max-cols-100 col-filler-wrap">
+		<div class="col col12x4 col-filler"></div>
+		<div class="footer-col col col12x4">
+			<div class="h5 col-header">Links</div>
+			<?= Nav::widget([
+				'view' => $this, 'slug' => Theme::MENU_LINKS,
+				'options' => [ 'id' => 'menu-links', 'class' => 'nav' ]
+			])?>
+		</div>
+		<div class="col col12x8 col-filler"></div>
+		<div class="footer-col col col12x4">
+			<div class="h5 col-header">Featured Posts</div>
+			<?= PostWidget::widget([
+				'pagination' => false, 'defaultBanner' => true, 'limit' => 6,
+				'template' => 'avatar', 'widget' => 'featured',
+				'wrapperOptions' => [ 'class' => 'blog-posts row' ],
+				'singleOptions' => [ 'class' => 'blog-post' ]
+			])?>
+		</div>
+		<div class="footer-col col col12x4">
+			<div class="h5 col-header">Newsletter</div>
+			<div class="text text-secondary-l">Sign Up to receive updates from us.</div>
+			<?= FollowMeWidget::widget([
+				'wrap' => true, 'options' => [ 'class' => 'footer-newsletter-wrap' ],
+				'templateDir' => '@themeTemplates/widget/newsletter'
+			]) ?>
+		</div>
+	</div>
+</footer>
+<footer class="footer footer-copyright">
+	<div class="row row-xlarge padding padding-small-v align align-center">
+		Copyright © 2017 - <?= date( 'Y' ) ?> <?= $coreProperties->getSiteName() ?>. All Rights Reserved.
+	</div>
+</footer>

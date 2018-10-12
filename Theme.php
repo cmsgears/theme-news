@@ -1,48 +1,64 @@
 <?php
-namespace themes\newstheme;
+/**
+ * This file is part of CMSGears Framework. Please view License file distributed
+ * with the source code for license details.
+ *
+ * @link https://www.cmsgears.org/
+ * @copyright Copyright (c) 2015 VulpineCode Technologies Pvt. Ltd.
+ */
+
+namespace themes\news;
 
 // Yii Imports
-use \Yii;
+use Yii;
 
-class Theme extends \cmsgears\core\common\base\Theme {
+// CMG Imports
+use cmsgears\core\common\base\Theme as BaseTheme;
 
-	// Menus --------------------------------------------------------
+class Theme extends BaseTheme {
+
+	// Variables ---------------------------------------------------
+
+	// Globals ----------------
 
 	const MENU_MAIN			= 'main';
-        const MENU_MAIN_PRIVATE         = 'private-main-menu';
 	const MENU_SECONDARY	= 'secondary';
-	const MENU_CATEGORIES	= 'categories';
-	const MENU_ABOUT_US		= 'about-us';
-	const MENU_MORE    		= 'more';
-	const MENU_FEATURED		= 'featured';
+	const MENU_LINKS		= 'links';
 	const MENU_PAGE			= 'page';
-    const MENU_MERCHANT     = 'merchant';
 
-	// Widgets ------------------------------------------------------
-
-	const WIDGET_FOLLOW_US		= 'follow-us';
-	const WIDGET_INFO_FOOTER	= 'footer-info';
-	const WIDGET_ADDRESS_MAIN	= 'main-address';
-
-	// Variables ----------------------------------------------------
-
-	// Public
+	// Public -----------------
 
     public $pathMap = [
-        '@frontend/views' => '@themes/newstheme/views',
-        '@cmsgears' => '@themes/newstheme/modules/cmsgears',
-        '@news' => '@themes/newstheme/modules/newstheme'
+        '@frontend/views' => '@themes/news/views',
+        '@cmsgears' => '@themes/news/modules/cmsgears'
     ];
 
-	// Initialisation -----------------------------------------------
+	// Protected --------------
+
+	// Private ----------------
+
+	// Traits ------------------------------------------------------
+
+	// Constructor and Initialisation ------------------------------
 
     public function init() {
 
         parent::init();
 
 		// The path for templates
-		Yii::setAlias( '@templates', '@themes/newstheme/views/templates' );
+		Yii::setAlias( '@themeTemplates', '@themes/news/views/templates' );
 	}
-}
 
-?>
+	// Instance methods --------------------------------------------
+
+	// Yii interfaces ------------------------
+
+	// Yii parent classes --------------------
+
+	// CMG interfaces ------------------------
+
+	// CMG parent classes --------------------
+
+	// Theme ---------------------------------
+
+}

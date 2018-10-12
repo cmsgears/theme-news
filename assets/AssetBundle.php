@@ -1,89 +1,111 @@
 <?php
-namespace themes\newstheme\assets;
+/**
+ * This file is part of CMSGears Framework. Please view License file distributed
+ * with the source code for license details.
+ *
+ * @link https://www.cmsgears.org/
+ * @copyright Copyright (c) 2015 VulpineCode Technologies Pvt. Ltd.
+ */
+
+namespace themes\news\assets;
 
 // Yii Imports
-use \Yii;
+use yii\web\AssetBundle as BaseAssetBundle;
 use yii\web\View;
-use yii\helpers\Url;
 
-class AssetBundle extends \yii\web\AssetBundle {
+/**
+ * AssetBundle registers the global assets.
+ *
+ * @since 1.0.0
+ */
+class AssetBundle extends BaseAssetBundle {
 
 	// Variables ---------------------------------------------------
 
-	// Public ----
+	// Globals -------------------------------
 
-	// Path Configuration
-	public $sourcePath	= '@themes/newstheme/resources';
+	// Constants --------------
 
-	// Position to load css
-    public $cssOptions = [
-        'position' => View::POS_HEAD
-    ];
+	// Public -----------------
 
-	// Load Javascript
-    public $js      = [
-        'scripts/vendor/conditionizr-4.4.0.min.js',
-        'conditionizr/detects/ie6-ie7-ie8-ie9.js',
-        'scripts/templates.js',
+	// Protected --------------
+
+	// Variables -----------------------------
+
+	// Public -----------------
+
+	/**
+	 * @inheritdoc
+	 */
+	public $sourcePath = '@themes/news/resources';
+
+	/**
+	 * @inheritdoc
+	 */
+	public $cssOptions = [
+		'position' => View::POS_HEAD
+	];
+
+	/**
+	 * @inheritdoc
+	 */
+    public $js = [
+		// vendor
+		// templates
+        'scripts/templates/public.js',
+		// scripts
         'scripts/main.js',
-		'scripts/apps/main.js',
-		'scripts/apps/search.js',
-		'scripts/apps/user.js',
-		'scripts/apps/generic.js',
-		
+        'scripts/search.js',
+		// apix
+		'scripts/apix/public.js',
+		// apps
+        'scripts/apps/public.js'
     ];
 
-	// Position to load Javascript
+	/**
+	 * @inheritdoc
+	 */
     public $jsOptions = [
         'position' => View::POS_END
     ];
 
-	// Define dependent Asset Loaders
+	/**
+	 * @inheritdoc
+	 */
     public $depends = [
-		'yii\web\JqueryAsset',
-		'cmsgears\core\common\assets\JqueryUi',
-		'cmsgears\core\common\assets\CmgToolsJs',
-		'cmsgears\core\common\assets\MCustomScrollbar',
-		'cmsgears\core\common\assets\ImagesLoaded',
+    	'cmsgears\assets\jquery\Jquery',
+		//'cmsgears\assets\utilities\Conditionizr',
+		'cmsgears\assets\utilities\ImagesLoaded',
+		'cmsgears\assets\jquery\JqueryUi',
+		'cmsgears\assets\cmgtools\Velocity',
+		'cmsgears\assets\templates\Handlebars',
+		'cmsgears\assets\components\MCustomScrollbar',
+		//'cmsgears\assets\components\NoUiSlider',
+		//'cmsgears\assets\components\ProgressBar',
+		//'cmsgears\assets\effects\Animate',
 		'cmsgears\widgets\aform\assets\FormAssets',
 		'cmsgears\icons\assets\IconAssets',
-		'cmsgears\core\common\assets\Handlebars'
+		'themes\news\assets\vapps\BaseAssets'
     ];
 
-	// Constructor and Initialisation ------------------------------
+    // Protected --------------
 
-	public function __construct()  {
+    // Private ----------------
 
-		parent::__construct();
-	}
+    // Traits ------------------------------------------------------
 
-	// Additional Assets Registration ------------------------------
+    // Constructor and Initialisation ------------------------------
 
-	public function registerAssetFiles( $view ) {
+    // Instance methods --------------------------------------------
 
-		parent::registerAssetFiles( $view );
+    // Yii interfaces ------------------------
 
-		$inlineScript	= "conditionizr.config({
-			assets: 'conditionizr/resources/',
-		        tests: {
-		        ie6: [ 'script', 'style', 'class' ],
-		        ie7: [ 'script', 'style', 'class' ],
-		        ie8: [ 'script', 'style', 'class' ]
-		        }
-		    });
+    // Yii parent classes --------------------
 
-    		conditionizr.polyfill( 'scripts/vendor/html5shiv.min.js', [ 'ie6', 'ie7', 'ie8' ] );
-    		conditionizr.polyfill( 'scripts/vendor/respond.min.js', [ 'ie6', 'ie7', 'ie8' ] );";
+    // CMG interfaces ------------------------
 
-		$rootUrl = Url::toRoute( '/', true );
+    // CMG parent classes --------------------
 
-    	$siteUrl = "var siteUrl 	= '$rootUrl';
-					var ajaxUrl 	= '" . $rootUrl ."apix/';";
+    // AssetBundle ---------------------------
 
-		$view->registerJs( $inlineScript, View::POS_READY );
-
-		$view->registerJs( $siteUrl, View::POS_END );
-	}
 }
-
-?>
