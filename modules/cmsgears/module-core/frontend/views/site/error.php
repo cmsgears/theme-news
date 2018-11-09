@@ -21,7 +21,7 @@ $message	= nl2br( Html::encode( $message ) );
 		<div class="block-content row row-medium">
 			<div class="block-content-data">
 				<div class="error align align-center">
-					<img class="fluid" src="<?= Yii::getAlias( '@images' ) ?>/blog/error.png" />
+					<img class="fluid" src="<?= Yii::getAlias( '@images' ) ?>/news/error.png" />
 				</div>
 			</div>
 		</div>

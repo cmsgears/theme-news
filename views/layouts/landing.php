@@ -14,7 +14,7 @@ $this->registerAssetBundle( 'landing' );
 // Common variables available for headers, sidebars and footers included within this layout
 $coreProperties = $this->context->getCoreProperties();
 $themePath		= Yii::getAlias( '@themes/news' );
-$user			= Yii::$app->user->getIdentity();
+$user			= Yii::$app->core->getUser();
 ?>
 <?php $this->beginPage(); ?>
 <!DOCTYPE html>

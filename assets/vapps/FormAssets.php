@@ -13,11 +13,11 @@ namespace themes\news\assets\vapps;
 use yii\web\View;
 
 /**
- * BaseAssets registers the most commonly used Velocity Apps of Core Module.
+ * FormAssets registers the Velocity Apps of Form Module.
  *
  * @since 1.0.0
  */
-class BaseAssets extends \yii\web\AssetBundle {
+class FormAssets extends \yii\web\AssetBundle {
 
 	// Variables ---------------------------------------------------
 
@@ -38,13 +38,8 @@ class BaseAssets extends \yii\web\AssetBundle {
 
 	// Load JS
 	public $js = [
-		'apps/core/base.js',
-		'apps/core/grid.js',
-		'apps/core/controllers/site.js',
-		'apps/core/controllers/province.js',
-		'apps/core/controllers/region.js',
-		'apps/core/controllers/city.js',
-		'apps/core/controllers/comment.js'
+		'apps/forms/base.js',
+		'apps/forms/controllers/form.js',
 	];
 
 	// JS Position
@@ -70,6 +65,6 @@ class BaseAssets extends \yii\web\AssetBundle {
 
 	// CMG parent classes --------------------
 
-	// BaseAssets ----------------------------
+	// FormAssets ----------------------------
 
 }

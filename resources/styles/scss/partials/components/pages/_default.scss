@@ -1,3 +1,23 @@
+.page-default {
+
+	.page-content-wrap {
+
+		.page-content-row {
+			padding: 0 5%;
+		}
+	}
+
+	@include responsive-max( screen-tablet-large ) {
+
+		.page-content-wrap {
+
+			.page-content-row {
+				padding: 0 5%;
+			}
+		}
+	}
+}
+
 .page-model-blog {
 
 	.page-content-wrap {

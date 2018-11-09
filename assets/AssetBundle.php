@@ -53,9 +53,6 @@ class AssetBundle extends BaseAssetBundle {
 		// vendor
 		// templates
         'scripts/templates/public.js',
-		// scripts
-        'scripts/main.js',
-        'scripts/search.js',
 		// apix
 		'scripts/apix/public.js',
 		// apps
@@ -83,7 +80,8 @@ class AssetBundle extends BaseAssetBundle {
 		//'cmsgears\assets\components\NoUiSlider',
 		//'cmsgears\assets\components\ProgressBar',
 		//'cmsgears\assets\effects\Animate',
-		'cmsgears\widgets\aform\assets\FormAssets',
+		//'cmsgears\widgets\aform\assets\FormAssets',
+		'themes\news\assets\vapps\FormAssets',
 		'cmsgears\icons\assets\IconAssets',
 		'themes\news\assets\vapps\BaseAssets'
     ];

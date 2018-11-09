@@ -63,18 +63,21 @@
 //@import "breeze/elements/splitter";
 @import "breeze/elements/tabs";
 @import "breeze/elements/accordian";
+//@import "breeze/elements/actions";
 @import "breeze/elements/breadcrumb";
 //@import "breeze/elements/auto-fill";
 //@import "breeze/elements/uploader";
 //@import "breeze/elements/flipper";
+//@import "breeze/elements/mapper";
 @import "partials/elements/accordian";
 
 // ---------------------------------------//
 // Components Division
 // ---------------------------------------//
 
-//@import "breeze/components/data/zigzag";
+//@import "breeze/components/data/basic";
 //@import "breeze/components/data/crud";
+//@import "breeze/components/data/zigzag";
 
 @import "breeze/components/menus/basic";
 //@import "breeze/components/menus/collapsible";
@@ -90,8 +93,6 @@
 //@import "breeze/components/sidebars/basic";
 @import "breeze-templates/components/sidebars/default";
 @import "partials/components/sidebars/default";
-
-//@import "breeze/components/mappers/basic";
 
 //@import "breeze/components/popups/basic";
 //@import "breeze/components/popups/popouts";

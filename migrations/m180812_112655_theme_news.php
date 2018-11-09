@@ -18,6 +18,7 @@ use cmsgears\core\common\models\entities\Site;
 use cmsgears\core\common\models\entities\User;
 use cmsgears\core\common\models\entities\Theme;
 use cmsgears\core\common\models\entities\Template;
+use cmsgears\cms\common\models\entities\Page;
 
 use cmsgears\core\common\utilities\DateUtil;
 
@@ -63,10 +64,13 @@ class m180812_112655_theme_news extends Migration {
 
 		// Objects
 		$this->insertMenus();
+		$this->insertElements();
+		$this->insertBlocks();
 		$this->insertWidgets();
 		$this->insertSidebars();
 
 		// Page
+		$this->insertPages();
 		$this->configurePageTemplates();
 
 		// Site
@@ -96,12 +100,19 @@ class m180812_112655_theme_news extends Migration {
 	private function insertThemeTemplates() {
 
 		$theme	= Theme::findBySlug( 'news' );
+		$prefix	= $this->themePrefix;
 
-		$columns = [ 'themeId', 'createdBy', 'modifiedBy', 'name', 'slug', 'icon', 'type', 'active', 'description', 'classPath', 'renderer', 'fileRender', 'layout', 'layoutGroup', 'viewPath', 'view', 'createdAt', 'modifiedAt', 'htmlOptions', 'content', 'data' ];
+		$master	= $this->master;
+
+		$columns = [ 'themeId', 'createdBy', 'modifiedBy', 'name', 'slug', 'type', 'icon', 'title', 'active', 'description', 'classPath', 'dataPath', 'dataForm', 'attributesPath', 'attributesForm', 'configPath', 'configForm', 'settingsPath', 'settingsForm', 'renderer', 'fileRender', 'layout', 'layoutGroup', 'viewPath', 'view', 'createdAt', 'modifiedAt', 'htmlOptions', 'content', 'data' ];
 
 		$templates = [
+			// Theme Templates - Page
+			//[ $theme->id, $master->id, $master->id, 'Page', 'page', CmsGlobal::TYPE_PAGE, null, null, true, 'Page layout for pages.', null, null, null, null, null, null, null, 'cmsgears\templates\breeze\models\forms\settings\PageSettings', '@breeze/templates/page/default/forms', 'default', true, 'page/default', false, '@themeTemplates/page/test', null, DateUtil::getDateTime(), DateUtil::getDateTime(), '{ "class": "page-basic" }', null, null ],
+			// Theme Templates - Block
+			//[ $theme->id, $master->id, $master->id, 'Block', 'block', CmsGlobal::TYPE_BLOCK, null, null, true, 'Block layout for blocks.', null, null, null, null, null, null, null, 'cmsgears\templates\breeze\models\forms\settings\BlockSettings', '@breeze/templates/block/default/forms', 'default', true, null, false, '@breeze/templates/block/test', null, DateUtil::getDateTime(), DateUtil::getDateTime(), '{ "class": "block-basic block-default" }', null, null ],
 			// Theme Templates - Widget
-			//[ $theme->id, $this->master->id, $this->master->id, 'Address', "address", null, CmsGlobal::TYPE_WIDGET, true, 'It can be used to display address and location.', null, 'default', true, null, false, '@themeTemplates/widget/address', null, DateUtil::getDateTime(), DateUtil::getDateTime(), null, null, null ]
+			//[ $theme->id, $master->id, $master->id, 'Widget', 'widget', CmsGlobal::TYPE_WIDGET, null, null, true, 'Widget layout for widgets.', null, null, null, null, null, null, null, 'cmsgears\templates\breeze\models\forms\settings\WidgetSettings', '@breeze/templates/widget/default/forms', 'default', true, null, false, '@breeze/templates/widget/test', null, DateUtil::getDateTime(), DateUtil::getDateTime(), '{ "class": "widget-basic widget-default" }', null, null ]
 		];
 
 		$this->batchInsert( $this->cmgPrefix . 'core_template', $columns, $templates );
@@ -109,51 +120,126 @@ class m180812_112655_theme_news extends Migration {
 
 	private function insertMenus() {
 
-		$site	= $this->site;
 		$theme	= Theme::findBySlug( 'news' );
+		$prefix	= $this->themePrefix;
+
+		$master	= $this->master;
+
 		$status	= ObjectData::STATUS_ACTIVE;
+		$vis	= ObjectData::VISIBILITY_PUBLIC;
 
-		$columns = [ 'siteId', 'themeId', 'templateId', 'avatarId', 'bannerId', 'createdBy', 'modifiedBy', 'name', 'slug', 'type', 'icon', 'description', 'status', 'classPath', 'createdAt', 'modifiedAt', 'htmlOptions', 'content', 'data' ];
+		$columns = [ 'themeId', 'templateId', 'avatarId', 'bannerId', 'createdBy', 'modifiedBy', 'name', 'slug', 'type', 'icon', 'description', 'status', 'visibility', 'classPath', 'createdAt', 'modifiedAt', 'htmlOptions', 'content', 'data' ];
 
-		$objects = [
-			//[ $site->id, $theme->id, NULL, NULL ,NULL, 1, 1, 'Main', 'main', CmsGlobal::TYPE_MENU, NULL, 'Main Menu used on landing header.', $status, NULL, '2014-10-11 14:22:54', '2016-04-16 10:00:10', NULL, NULL, NULL ]
+		$models = [
+			//[ $theme->id, NULL, NULL ,NULL, $master->id, $master->id, 'Menu', 'menu', CmsGlobal::TYPE_MENU, NULL, 'Menu used on footer.', $status, $vis, NULL, DateUtil::getDateTime(), DateUtil::getDateTime(), NULL, NULL, NULL ]
 		];
 
-		$this->batchInsert( $this->cmgPrefix . 'core_object', $columns, $objects );
+		$this->batchInsert( $this->cmgPrefix . 'core_object', $columns, $models );
+	}
+
+	private function insertElements() {
+
+		$theme	= Theme::findBySlug( 'news' );
+		$prefix	= $this->themePrefix;
+
+		$master	= $this->master;
+
+		$status	= ObjectData::STATUS_ACTIVE;
+
+		$columns = [ 'themeId', 'templateId', 'avatarId', 'bannerId', 'videoId', 'galleryId', 'createdBy', 'modifiedBy', 'name', 'slug', 'type', 'icon', 'texture', 'title', 'description', 'classPath', 'link', 'status', 'visibility', 'order', 'pinned', 'featured', 'createdAt', 'modifiedAt', 'htmlOptions', 'summary', 'content', 'data' ];
+
+		$models = [
+			// Theme Elements
+		];
+
+		$this->batchInsert( $this->cmgPrefix . 'core_object', $columns, $models );
+	}
+
+	private function insertBlocks() {
+
+		$theme	= Theme::findBySlug( 'news' );
+		$prefix	= $this->themePrefix;
+
+		$master	= $this->master;
+
+		$status	= ObjectData::STATUS_ACTIVE;
+
+		$columns = [ 'themeId', 'templateId', 'avatarId', 'bannerId', 'videoId', 'galleryId', 'createdBy', 'modifiedBy', 'name', 'slug', 'type', 'icon', 'texture', 'title', 'description', 'classPath', 'link', 'status', 'visibility', 'order', 'pinned', 'featured', 'createdAt', 'modifiedAt', 'htmlOptions', 'summary', 'content', 'data' ];
+
+		$models = [
+			// Theme Blocks
+		];
+
+		$this->batchInsert( $this->cmgPrefix . 'core_object', $columns, $models );
 	}
 
 	private function insertWidgets() {
 
-		$site	= $this->site;
 		$theme	= Theme::findBySlug( 'news' );
+		$prefix	= $this->themePrefix;
+
+		$master	= $this->master;
+
 		$status	= ObjectData::STATUS_ACTIVE;
 
 		$defaultTemplate = Template::findGlobalBySlugType( 'default', CmsGlobal::TYPE_WIDGET );
 
-		$columns = [ 'siteId', 'templateId', 'avatarId', 'bannerId', 'createdBy', 'modifiedBy', 'name', 'slug', 'type', 'icon', 'description', 'status', 'classPath', 'createdAt', 'modifiedAt', 'htmlOptions', 'content', 'data' ];
+		$columns = [ 'themeId', 'templateId', 'avatarId', 'bannerId', 'videoId', 'galleryId', 'createdBy', 'modifiedBy', 'name', 'slug', 'type', 'icon', 'texture', 'title', 'description', 'classPath', 'link', 'status', 'visibility', 'order', 'pinned', 'featured', 'createdAt', 'modifiedAt', 'htmlOptions', 'summary', 'content', 'data' ];
+
+		$widgets = [
+			// Theme Widgets
+		];
+
+		$this->batchInsert( $this->cmgPrefix . 'core_object', $columns, $widgets );
+	}
+
+	private function insertSidebars() {
+
+		$theme	= Theme::findBySlug( 'news' );
+		$prefix	= $this->themePrefix;
+
+		$master	= $this->master;
+
+		$status	= ObjectData::STATUS_ACTIVE;
+
+		$defaultTemplate = Template::findGlobalBySlugType( 'default', CmsGlobal::TYPE_SIDEBAR );
+
+		$columns = [ 'themeId', 'templateId', 'avatarId', 'bannerId', 'videoId', 'galleryId', 'createdBy', 'modifiedBy', 'name', 'slug', 'type', 'icon', 'texture', 'title', 'description', 'classPath', 'link', 'status', 'visibility', 'order', 'pinned', 'featured', 'createdAt', 'modifiedAt', 'htmlOptions', 'summary', 'content', 'data' ];
 
 		$objects = [
-
+			// Theme Sidebars
 		];
 
 		$this->batchInsert( $this->cmgPrefix . 'core_object', $columns, $objects );
 	}
 
-	private function insertSidebars() {
+	private function insertPages() {
 
-		$site	= $this->site;
-		$theme	= Theme::findBySlug( 'news' );
-		$status	= ObjectData::STATUS_ACTIVE;
+		$master	= $this->master;
+		$prefix	= $this->themePrefix;
 
-		$defaultTemplate = Template::findBySlugType( 'default', CmsGlobal::TYPE_SIDEBAR );
+		$site = $this->site;
 
-		$columns = [ 'siteId', 'templateId', 'avatarId', 'bannerId', 'createdBy', 'modifiedBy', 'name', 'slug', 'type', 'icon', 'description', 'status', 'classPath', 'createdAt', 'modifiedAt', 'htmlOptions', 'content', 'data' ];
+		// Templates
+		$defaultTemplate = Template::findGlobalBySlugType( 'default', CmsGlobal::TYPE_PAGE );
 
-		$objects = [
+		$columns = [ 'siteId', 'avatarId', 'parentId', 'createdBy', 'modifiedBy', 'name', 'slug', 'type', 'icon', 'texture', 'title', 'description', 'status', 'visibility', 'order', 'pinned', 'featured', 'comments', 'createdAt', 'modifiedAt', 'content', 'data', 'gridCache', 'gridCacheValid', 'gridCachedAt' ];
 
+		$pages = [
+			// Theme Pages
+			//[ $site->id, null, null, $master->id, $master->id, 'Home', 'home', CmsGlobal::TYPE_PAGE, null, null, null, null, Page::STATUS_ACTIVE, Page::VISIBILITY_PUBLIC, 0, false, false, 0, DateUtil::getDateTime(), DateUtil::getDateTime(), null, null, null, 0, null ]
 		];
 
-		$this->batchInsert( $this->cmgPrefix . 'core_object', $columns, $objects );
+		$this->batchInsert( $this->cmgPrefix . 'cms_page', $columns, $pages );
+
+		$columns = [ 'id', 'templateId', 'bannerId', 'videoId', 'galleryId', 'parentId', 'parentType', 'type', 'summary', 'seoName', 'seoDescription', 'seoKeywords', 'seoRobot', 'publishedAt', 'content', 'data' ];
+
+		$pagesContent = [
+			// Theme Pages
+			//[ $defaultTemplate->id, null, null, null, Page::findBySlugType( 'home', CmsGlobal::TYPE_PAGE )->id, CmsGlobal::TYPE_PAGE, null, null, null, null, null, null, DateUtil::getDateTime(), null, null ]
+		];
+
+		$this->batchInsert( $this->cmgPrefix . 'cms_model_content', $columns, $pagesContent );
 	}
 
 	private function configurePageTemplates() {

@@ -20,7 +20,7 @@ if( class_exists( 'yii\debug\Module' ) ) {
 		<div class="block-content row row-medium">
 			<div class="block-content-data">
 				<div class="maintenance align align-center">
-					<img class="fluid" src="<?= Yii::getAlias( '@images' ) ?>/blog/maintenance.png" />
+					<img class="fluid" src="<?= Yii::getAlias( '@images' ) ?>/news/maintenance.png" />
 				</div>
 			</div>
 		</div>
