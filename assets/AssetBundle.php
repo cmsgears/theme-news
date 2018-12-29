@@ -10,6 +10,7 @@
 namespace themes\news\assets;
 
 // Yii Imports
+use yii\web\AssetBundle as BaseAssetBundle;
 use yii\web\View;
 
 /**
@@ -17,7 +18,7 @@ use yii\web\View;
  *
  * @since 1.0.0
  */
-class AssetBundle extends \yii\web\AssetBundle {
+class AssetBundle extends BaseAssetBundle {
 
 	// Variables ---------------------------------------------------
 
@@ -48,23 +49,22 @@ class AssetBundle extends \yii\web\AssetBundle {
 	/**
 	 * @inheritdoc
 	 */
-	public $js = [
+    public $js = [
 		// vendor
 		// templates
         'scripts/templates/public.js',
 		// apix
 		'scripts/apix/public.js',
 		// apps
-        'scripts/apps/public.js',
-		'scripts/apps/core/controllers/site.js'
-	];
+        'scripts/apps/public.js'
+    ];
 
 	/**
 	 * @inheritdoc
 	 */
-	public $jsOptions = [
-		'position' => View::POS_END
-	];
+    public $jsOptions = [
+        'position' => View::POS_END
+    ];
 
 	/**
 	 * @inheritdoc
@@ -80,9 +80,10 @@ class AssetBundle extends \yii\web\AssetBundle {
 		//'cmsgears\assets\components\NoUiSlider',
 		//'cmsgears\assets\components\ProgressBar',
 		//'cmsgears\assets\effects\Animate',
+		//'cmsgears\widgets\aform\assets\FormAssets',
+		'themes\news\assets\vapps\FormAssets',
 		'cmsgears\icons\assets\IconAssets',
-		'themes\news\assets\vapps\BaseAssets',
-		'themes\news\assets\vapps\FormAssets'
+		'themes\news\assets\vapps\BaseAssets'
     ];
 
     // Protected --------------

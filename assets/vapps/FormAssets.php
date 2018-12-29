@@ -39,7 +39,7 @@ class FormAssets extends \yii\web\AssetBundle {
 	// Load JS
 	public $js = [
 		'apps/forms/base.js',
-		'apps/forms/controllers/form.js'
+		'apps/forms/controllers/form.js',
 	];
 
 	// JS Position

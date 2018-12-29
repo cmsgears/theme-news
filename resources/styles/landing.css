@@ -1579,6 +1579,12 @@ Notes:
   background-size: cover;
 }
 
+.bkg-element-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
 .bkg-element {
   display: block;
   position: relative;
@@ -2344,12 +2350,6 @@ textarea {
 pre {
   white-space: pre;
   /* CSS2 */
-  white-space: pre-wrap;
-  /* CSS 2.1 */
-  white-space: pre-line;
-  /* CSS 2.1 and 3 */
-  word-wrap: break-word;
-  /* IE */
 }
 
 td img {
@@ -2743,16 +2743,16 @@ html, body {
   height: 75%;
 }
 .height.height-default {
-  width: 64px;
+  height: 64px;
 }
 .height.height-small {
-  width: 128px;
+  height: 128px;
 }
 .height.height-medium {
-  width: 256px;
+  height: 256px;
 }
 .height.height-large {
-  width: 512px;
+  height: 512px;
 }
 
 /**
@@ -5445,6 +5445,100 @@ Details: It defines the grid system and basic containers as listed below:
   border-top: 13.5px solid #FFFFFF;
 }
 
+.filter-blur {
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+.filter-blur.filter-blur-small {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+.filter-blur.filter-blur-medium {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+.filter-blur.filter-blur-large {
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+}
+.filter-blur.filter-blur-xlarge {
+  -webkit-filter: blur(12px);
+  -moz-filter: blur(12px);
+  -o-filter: blur(12px);
+  -ms-filter: blur(12px);
+  filter: blur(12px);
+}
+
+.filter-grayscale.filter-grayscale-25 {
+  -webkit-filter: grayscale(0.25);
+  -moz-filter: grayscale(0.25);
+  -o-filter: grayscale(0.25);
+  -ms-filter: grayscale(0.25);
+  filter: grayscale(0.25);
+}
+.filter-grayscale.filter-grayscale-50 {
+  -webkit-filter: grayscale(0.5);
+  -moz-filter: grayscale(0.5);
+  -o-filter: grayscale(0.5);
+  -ms-filter: grayscale(0.5);
+  filter: grayscale(0.5);
+}
+.filter-grayscale.filter-grayscale-75 {
+  -webkit-filter: grayscale(0.75);
+  -moz-filter: grayscale(0.75);
+  -o-filter: grayscale(0.75);
+  -ms-filter: grayscale(0.75);
+  filter: grayscale(0.75);
+}
+.filter-grayscale.filter-grayscale-100 {
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+  -ms-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.filter-sepia.filter-sepia-25 {
+  -webkit-filter: sepia(0.25);
+  -moz-filter: sepia(0.25);
+  -o-filter: sepia(0.25);
+  -ms-filter: sepia(0.25);
+  filter: sepia(0.25);
+}
+.filter-sepia.filter-sepia-50 {
+  -webkit-filter: sepia(0.5);
+  -moz-filter: sepia(0.5);
+  -o-filter: sepia(0.5);
+  -ms-filter: sepia(0.5);
+  filter: sepia(0.5);
+}
+.filter-sepia.filter-sepia-75 {
+  -webkit-filter: sepia(0.75);
+  -moz-filter: sepia(0.75);
+  -o-filter: sepia(0.75);
+  -ms-filter: sepia(0.75);
+  filter: sepia(0.75);
+}
+.filter-sepia.filter-sepia-100 {
+  -webkit-filter: sepia(1);
+  -moz-filter: sepia(1);
+  -o-filter: sepia(1);
+  -ms-filter: sepia(1);
+  filter: sepia(1);
+}
+
 .hover-color-primary {
   -moz-transition: color 420ms ease-in-out 0s, background-color 420ms ease-in-out 0s;
   -ms-transition: color 420ms ease-in-out 0s, background-color 420ms ease-in-out 0s;
@@ -6205,7 +6299,7 @@ dependent on browsers. It depends on cmtSelect jQuery plugin available in Veloci
 .cmt-select-wrap .cmt-select .cmt-selected {
   cursor: pointer;
   position: relative;
-  z-index: 100000;
+  z-index: 99999;
   width: 100%;
   padding: 0.30em;
   background-color: #EAECF1;
@@ -6362,7 +6456,7 @@ by showing good looking icons instead of browser dependentent graphics. These ar
 of JS and purely css solutions.
 ***********************************************************************/
 .cmt-choice span, .cmt-choice a {
-  vertical-align: top;
+  vertical-align: middle;
 }
 .cmt-choice input[type=checkbox],
 .cmt-choice input[type=radio] {
@@ -8818,6 +8912,564 @@ Usage: Sidebars can be used to manage page widgets on sidebars.
 }
 
 /**********************************************************************
+Description: It defines the styles for popup components available in CMT-UI css framework.
+
+Dependencies: variables, variables-ext, mixins
+
+Details: It defines the styles for popup components as listed below:
+
+* Popup       - The barebone popup class with minimum styles to position it's elements.
+*
+* Basic       - The basic popup define the default coloring and spacing for popup data.
+*
+* Modal       - The modal popup will be fixed and positioned on top of all other elements.
+***********************************************************************/
+.popup {
+  position: relative;
+  display: none;
+}
+.popup .popup-screen {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.popup .popup-bkg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.popup .popup-bkg-texture {
+  z-index: 15;
+}
+.popup .popup-screen-listener {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+.popup .popup-data {
+  position: relative;
+  z-index: 50;
+}
+.popup .popup-data .popup-data-bkg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.popup .popup-data .popup-data-bkg-texture {
+  z-index: 15;
+}
+.popup .popup-data .popup-header {
+  position: relative;
+  z-index: 150;
+  width: 100%;
+}
+.popup .popup-data .popup-content-wrap .popup-content {
+  position: relative;
+  z-index: 150;
+}
+.popup .popup-data .popup-close {
+  position: absolute;
+  z-index: 200;
+  display: inline-block;
+  cursor: pointer;
+}
+.popup .popup-data.popup-data-small {
+  height: 200px;
+  width: 400px;
+}
+.popup .popup-data.popup-data-small .popup-content-wrap .popup-content {
+  height: 120px;
+}
+.popup .popup-data.popup-data-medium {
+  height: 300px;
+  width: 600px;
+}
+.popup .popup-data.popup-data-medium .popup-content-wrap .popup-content {
+  height: 220px;
+}
+.popup .popup-data.popup-data-large {
+  height: 400px;
+  width: 800px;
+}
+.popup .popup-data.popup-data-large .popup-content-wrap .popup-content {
+  height: 320px;
+}
+@media only screen and (max-width: 768px) {
+  .popup .popup-data-small, .popup .popup-data-medium, .popup .popup-data-large {
+    width: 90% !important;
+  }
+}
+
+.popup-basic .popup-screen {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.popup-basic .popup-data {
+  background-color: #3F3F46;
+  color: #888888;
+}
+.popup-basic .popup-data .popup-header {
+  background-color: #F3702E;
+  color: #FFFFFF;
+  padding: 1rem;
+}
+.popup-basic .popup-data .popup-header .popup-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.popup-basic .popup-data .popup-content-wrap {
+  padding: 1rem;
+}
+.popup-basic .popup-data .popup-content-wrap .overflow-auto {
+  overflow-y: auto;
+}
+.popup-basic .popup-data .popup-close {
+  top: 0.75em;
+  right: 0.75em;
+  color: #FFFFFF;
+}
+
+.popup-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999999;
+  overflow-y: auto;
+}
+.popup-modal .popup-screen, .popup-modal .popup-screen-listener {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/**********************************************************************
+Description: It defines the styles of cmt slider available in CMT-UI css framework. It requires cmtSlider plugin from CMT-JS library.
+
+Dependencies: variables, variables-ext, mixins
+
+Details: It defines the styles of cmt slider as listed below:
+
+* CMT Slider  - The barebone slider with minimum styles to arrange slides and controls.
+*
+* Basic       - The basic slider defines the styles of slider having fixed with slides and slider width is also defined.
+*
+* Basic Fixed - The basic fixed slider works on top of basic slider. It's full width and responsive slider considering
+				slides are visible fully on each device. The controls will be placed on left and right side without
+				overlapping slides.
+
+* Basic Lightbox - The lightbox will add effects on slides to show them on a lightbox. A larger image might be displayed
+				around the slides.
+
+***********************************************************************/
+.slider {
+  position: relative;
+}
+.slider .slider-slides-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.slider .slider-slides-wrap .slider-slides {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.slider .slider-slides-wrap .slider-slides .slider-slide {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.slider .slider-slides-wrap .slider-slides .wrap-slide-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slider .slider-control {
+  cursor: pointer;
+  position: absolute;
+}
+.slider .slider-control.slider-control-left {
+  top: 0;
+  left: 0;
+}
+.slider .slider-control.slider-control-right {
+  top: 0;
+  right: 0;
+}
+
+.slider-basic {
+  margin: 0px auto;
+  width: 450px;
+}
+.slider-basic .slider-slides-wrap {
+  height: 150px;
+}
+.slider-basic .slider-slides-wrap .slider-slides .slider-slide {
+  width: 150px;
+  height: 150px;
+  background-color: #3F3F46;
+  color: #888888;
+  text-align: center;
+}
+.slider-basic .slider-control {
+  background-color: #F3702E;
+  color: #FFFFFF;
+  top: 35px;
+  width: 64px;
+  height: 80px;
+}
+.slider-basic .slider-control:hover {
+  background-color: #EAECF1;
+  color: #F3702E;
+}
+.slider-basic .slider-control.slider-control-bkg {
+  background-image: url("../images/slider-arrow.png");
+  background-repeat: none;
+  background-position: 0px 0px;
+}
+.slider-basic .slider-control.slider-control-bkg.slider-control-left {
+  left: 20px;
+  background-position: 0px 80px;
+}
+.slider-basic .slider-control.slider-control-bkg.slider-control-left:hover {
+  background-position: 0px 0px;
+}
+.slider-basic .slider-control.slider-control-bkg.slider-control-right {
+  right: 20px;
+  background-position: -48px 80px;
+}
+.slider-basic .slider-control.slider-control-bkg.slider-control-right:hover {
+  background-position: -48px 0px;
+}
+
+.slider-basic-fixed {
+  width: 1628px;
+}
+.slider-basic-fixed .slider-slides-wrap {
+  width: 1500px;
+  margin: 0 64px;
+}
+@media only screen and (max-width: 1600px) {
+  .slider-basic-fixed {
+    width: 1328px;
+  }
+  .slider-basic-fixed .slider-slides-wrap {
+    width: 1200px;
+  }
+}
+@media only screen and (max-width: 1360px) {
+  .slider-basic-fixed {
+    width: 1028px;
+  }
+  .slider-basic-fixed .slider-slides-wrap {
+    width: 900px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .slider-basic-fixed {
+    width: 690px;
+  }
+  .slider-basic-fixed .slider-slides-wrap {
+    width: 600px;
+    height: 100px;
+    margin: 0 45px;
+  }
+  .slider-basic-fixed .slider-slides-wrap .slider-slides .slider-slide {
+    width: 100px;
+    height: 100px;
+  }
+  .slider-basic-fixed .slider-control {
+    width: 45px;
+    height: 100px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .slider-basic-fixed {
+    width: 440px;
+  }
+  .slider-basic-fixed .slider-slides-wrap {
+    width: 360px;
+    height: 90px;
+  }
+  .slider-basic-fixed .slider-slides-wrap .slider-slides .slider-slide {
+    width: 90px;
+    height: 90px;
+  }
+  .slider-basic-fixed .slider-control {
+    width: 40px;
+    height: 90px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .slider-basic-fixed {
+    width: 260px;
+  }
+  .slider-basic-fixed .slider-slides-wrap {
+    width: 180px;
+  }
+}
+
+.slider-lightbox .slider-slides-wrap .slider-slides .slider-slide {
+  cursor: pointer;
+  -webkit-box-shadow: inset 1px 1px 100px 0px #000000;
+  -moz-box-shadow: inset 1px 1px 100px 0px #000000;
+  box-shadow: inset 1px 1px 100px 0px #000000;
+}
+.slider-lightbox .slider-slides-wrap .slider-slides .slider-slide:hover {
+  -webkit-transition: all 250ms ease-in-out 0s;
+  -moz-transition: all 250ms ease-in-out 0s;
+  -ms-transition: all 250ms ease-in-out 0s;
+  -o-transition: all 250ms ease-in-out 0s;
+  transition: all 250ms ease-in-out 0s;
+  -webkit-box-shadow: inset 0px 0px 0px 0px #000000;
+  -moz-box-shadow: inset 0px 0px 0px 0px #000000;
+  box-shadow: inset 0px 0px 0px 0px #000000;
+}
+
+.slider-collage-5 .crl-wrap .cr.cr-w-h {
+  width: 50%;
+}
+.slider-collage-5 .crl-wrap .cr.cr-w-f {
+  width: 100%;
+}
+.slider-collage-5 .crl-wrap .cr.cr-h-m {
+  height: 120px;
+}
+.slider-collage-5 .crl-wrap .cr.cr-h-l {
+  height: 180px;
+}
+.slider-collage-5 .crl-wrap .cr.cr-h-xl {
+  height: 240px;
+}
+.slider-collage-5 .crl-wrap .cl {
+  display: inline-block;
+}
+.slider-collage-5 .crl-wrap .cl.cl-w-ot {
+  width: 33.3333%;
+}
+.slider-collage-5 .crl-wrap .cl.cl-w-h {
+  width: 50%;
+}
+.slider-collage-5 .crl-wrap .cl.cl-h-m {
+  height: 120px;
+}
+.slider-collage-5 .crl-wrap .cl.cl-h-l {
+  height: 180px;
+}
+.slider-collage-5 .crl-wrap .cl.cl-h-xl {
+  height: 240px;
+}
+.slider-collage-5 .crl-wrap .cb {
+  display: inline-block;
+}
+.slider-collage-5 .crl-wrap .cb.cb-w-0 {
+  width: 0%;
+}
+.slider-collage-5 .crl-wrap .cb.cb-h-m {
+  height: 120px;
+}
+.slider-collage-5 .crl-wrap .cb.cb-h-l {
+  height: 180px;
+}
+.slider-collage-5 .crl-wrap .cb.cb-h-xl {
+  height: 240px;
+}
+.slider-collage-5 .crl-wrap .cl-wrap {
+  width: 100%;
+  height: 100%;
+}
+.slider-collage-5 .crl-wrap .cr-wrap {
+  width: 100%;
+  height: 100%;
+}
+.slider-collage-5 .crl-wrap .wrap-slide-content {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: 5px solid white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-position: 50% 50% 9 !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: all 250ms ease-in-out 0s;
+  -moz-transition: all 250ms ease-in-out 0s;
+  -ms-transition: all 250ms ease-in-out 0s;
+  -o-transition: all 250ms ease-in-out 0s;
+  transition: all 250ms ease-in-out 0s;
+}
+.slider-collage-5 .crl-wrap .wrap-slide-content:hover {
+  -webkit-box-shadow: inset 1px 1px 50px 0px #000000;
+  -moz-box-shadow: inset 1px 1px 50px 0px #000000;
+  box-shadow: inset 1px 1px 50px 0px #000000;
+}
+@media only screen and (max-width: 1024px) {
+  .slider-collage-5 .crl-wrap .cr.cr-h-m {
+    height: 80px;
+  }
+  .slider-collage-5 .crl-wrap .cr.cr-h-l {
+    height: 120px;
+  }
+  .slider-collage-5 .crl-wrap .cr.cr-h-xl {
+    height: 160px;
+  }
+  .slider-collage-5 .crl-wrap .cl.cl-h-m {
+    height: 80px;
+  }
+  .slider-collage-5 .crl-wrap .cl.cl-h-l {
+    height: 120px;
+  }
+  .slider-collage-5 .crl-wrap .cl.cl-h-xl {
+    height: 160px;
+  }
+  .slider-collage-5 .crl-wrap .cb.cb-h-m {
+    height: 80px;
+  }
+  .slider-collage-5 .crl-wrap .cb.cb-h-l {
+    height: 120px;
+  }
+  .slider-collage-5 .crl-wrap .cb.cb-h-xl {
+    height: 160px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .slider-collage-5 .crl-wrap .cr.cr-h-m {
+    height: 50px;
+  }
+  .slider-collage-5 .crl-wrap .cr.cr-h-l {
+    height: 80px;
+  }
+  .slider-collage-5 .crl-wrap .cr.cr-h-xl {
+    height: 100px;
+  }
+  .slider-collage-5 .crl-wrap .cl.cl-h-m {
+    height: 50px;
+  }
+  .slider-collage-5 .crl-wrap .cl.cl-h-l {
+    height: 80px;
+  }
+  .slider-collage-5 .crl-wrap .cl.cl-h-xl {
+    height: 100px;
+  }
+  .slider-collage-5 .crl-wrap .cb.cb-h-m {
+    height: 50px;
+  }
+  .slider-collage-5 .crl-wrap .cb.cb-h-l {
+    height: 80px;
+  }
+  .slider-collage-5 .crl-wrap .cb.cb-h-xl {
+    height: 100px;
+  }
+}
+
+.slider-collage-5x2 .crl-wrap .cr.cr-h-m {
+  height: 240px;
+}
+.slider-collage-5x2 .crl-wrap .cr.cr-h-l {
+  height: 360px;
+}
+.slider-collage-5x2 .crl-wrap .cr.cr-h-xl {
+  height: 480px;
+}
+.slider-collage-5x2 .crl-wrap .cl.cl-h-m {
+  height: 240px;
+}
+.slider-collage-5x2 .crl-wrap .cl.cl-h-l {
+  height: 360px;
+}
+.slider-collage-5x2 .crl-wrap .cl.cl-h-xl {
+  height: 480px;
+}
+.slider-collage-5x2 .crl-wrap .cb.cb-h-m {
+  height: 240px;
+}
+.slider-collage-5x2 .crl-wrap .cb.cb-h-l {
+  height: 360px;
+}
+.slider-collage-5x2 .crl-wrap .cb.cb-h-xl {
+  height: 480px;
+}
+@media only screen and (max-width: 1024px) {
+  .slider-collage-5x2 .crl-wrap .cr.cr-h-m {
+    height: 160px;
+  }
+  .slider-collage-5x2 .crl-wrap .cr.cr-h-l {
+    height: 240px;
+  }
+  .slider-collage-5x2 .crl-wrap .cr.cr-h-xl {
+    height: 320px;
+  }
+  .slider-collage-5x2 .crl-wrap .cl.cl-h-m {
+    height: 160px;
+  }
+  .slider-collage-5x2 .crl-wrap .cl.cl-h-l {
+    height: 240px;
+  }
+  .slider-collage-5x2 .crl-wrap .cl.cl-h-xl {
+    height: 320px;
+  }
+  .slider-collage-5x2 .crl-wrap .cb.cb-h-m {
+    height: 160px;
+  }
+  .slider-collage-5x2 .crl-wrap .cb.cb-h-l {
+    height: 240px;
+  }
+  .slider-collage-5x2 .crl-wrap .cb.cb-h-xl {
+    height: 320px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .slider-collage-5x2 .crl-wrap .cr.cr-h-m {
+    height: 60px;
+  }
+  .slider-collage-5x2 .crl-wrap .cr.cr-h-l {
+    height: 100px;
+  }
+  .slider-collage-5x2 .crl-wrap .cr.cr-h-xl {
+    height: 120px;
+  }
+  .slider-collage-5x2 .crl-wrap .cl.cl-h-m {
+    height: 60px;
+  }
+  .slider-collage-5x2 .crl-wrap .cl.cl-h-l {
+    height: 100px;
+  }
+  .slider-collage-5x2 .crl-wrap .cl.cl-h-xl {
+    height: 120px;
+  }
+  .slider-collage-5x2 .crl-wrap .cb.cb-h-m {
+    height: 60px;
+  }
+  .slider-collage-5x2 .crl-wrap .cb.cb-h-l {
+    height: 100px;
+  }
+  .slider-collage-5x2 .crl-wrap .cb.cb-h-xl {
+    height: 120px;
+  }
+}
+
+/**********************************************************************
 Description: It defines the styles of data card components available in Breeze Framework.
 
 Dependencies: variables, variables-ext, mixins
@@ -8966,7 +9618,8 @@ Details: Default Card to be used to show data as listed below:
 Usage: Cards can be used to to show data of models.
 ***********************************************************************/
 /**********************************************************************
-Description: The Info Card with icon, avatar and text aligned at center to display text content.
+Description: The Info Card with icon, avatar, title and text aligned at center to display 
+text content with/without icon/avatar. It also provide top level classes to decorate the icon/avatar.
 
 Details: Info Card to be used as content card as listed below:
 
@@ -8981,7 +9634,7 @@ class specifies below listed options:
 title, description and summary.
 2.1. Header Icon - The icon/avatar will be displayed at center of header.
 2.2. Tiny Icon xxx - The classes to specify different sized icons.
-2.3. Color xxx - The classes to specify the icon color.
+2.3. Color Icon xxx - The classes to specify the icon color.
 
 3. Info Icon Box Card - Info icon card with icon having 1px square or rectangular border.
 3.1. Fat Border - Fat 5px border.
@@ -9084,10 +9737,10 @@ background banner of Block.
 .card-info-icon.card-info-icon-primary .card-content-wrap .card-header .card-header-icon .icon {
   color: #F4F6F8;
 }
-.card-info-icon.card-info-icon-primary .card-content-wrap .card-header .card-header-icon .icon {
+.card-info-icon.card-info-icon-secondary .card-content-wrap .card-header .card-header-icon .icon {
   color: #3F3F46;
 }
-.card-info-icon.card-info-icon-primary .card-content-wrap .card-header .card-header-icon .icon {
+.card-info-icon.card-info-icon-tertiary .card-content-wrap .card-header .card-header-icon .icon {
   color: #F3702E;
 }
 @media only screen and (max-width: 1024px) {
@@ -9165,44 +9818,33 @@ background banner of Block.
   border-radius: 100%;
 }
 
-.widget-card-post {
-  background-color: #FFFFFF;
-  color: #3F3F46;
-}
-.widget-card-post .card-page-wrap-title {
-  background-color: #000000;
-  color: #FFFFFF;
-  font: Fira Sans Medium, Sans-Serif, Arial;
-  font-size: 1.58em;
+.card-model-wrap .card-model {
   padding: 1rem;
 }
-.widget-card-post .card-page {
-  padding: 1rem;
-}
-.widget-card-post .card-page .card-content-wrap {
+.card-model-wrap .card-model .card-content-wrap {
   padding-bottom: 1em;
   border-bottom: 1px solid #D1D2D3;
 }
-.widget-card-post .card-page .card-content-wrap .card-content .card-content-title {
+.card-model-wrap .card-model .card-content-wrap .card-content .card-content-title {
   font: Fira Sans Medium, Sans-Serif, Arial;
   font-size: 1.33em;
   margin-bottom: 1rem;
 }
-.widget-card-post .card-page .card-content-wrap .card-content .card-content-title a {
+.card-model-wrap .card-model .card-content-wrap .card-content .card-content-title a {
   color: #3F3F46;
 }
-.widget-card-post .card-page .card-content-wrap .card-content .card-content-title a:hover {
+.card-model-wrap .card-model .card-content-wrap .card-content .card-content-title a:hover {
   color: #F3702E;
 }
-.widget-card-post .card-page .card-content-wrap.card-content-split .card-header {
+.card-model-wrap .card-model .card-content-wrap.card-content-split .card-header {
   float: left;
   overflow: hidden;
 }
-.widget-card-post .card-page .card-content-wrap.card-content-split .card-header .bkg-element-wrap {
+.card-model-wrap .card-model .card-content-wrap.card-content-split .card-header .bkg-element-wrap {
   width: 100px;
   height: 80px;
 }
-.widget-card-post .card-page .card-content-wrap.card-content-split .card-content {
+.card-model-wrap .card-model .card-content-wrap.card-content-split .card-content {
   padding-left: 110px;
 }
 
@@ -9367,58 +10009,53 @@ Details: Default Box to be used to show data as listed below:
 
 Usage: Boxes can be used to to show data of models.
 ***********************************************************************/
-.widget-box-home-post {
-  background-color: #FFFFFF;
-  color: #3F3F46;
-  padding: 1rem;
-}
-.widget-box-home-post .box-home {
+.box-home-wrap .box-home {
   margin-bottom: 1.5em;
 }
-.widget-box-home-post .box-home .box-content-wrap {
+.box-home-wrap .box-home .box-content-wrap {
   margin-bottom: 1.5em;
 }
-.widget-box-home-post .box-home .box-content-wrap .box-content .box-content-title {
+.box-home-wrap .box-home .box-content-wrap .box-content .box-content-title {
   font: Fira Sans Medium, Sans-Serif, Arial;
   font-size: 1.58em;
   margin: 0.75em 0;
 }
-.widget-box-home-post .box-home .box-content-wrap .box-content .box-content-title a {
+.box-home-wrap .box-home .box-content-wrap .box-content .box-content-title a {
   color: #3F3F46;
 }
-.widget-box-home-post .box-home .box-content-wrap .box-content .box-content-title a:hover {
+.box-home-wrap .box-home .box-content-wrap .box-content .box-content-title a:hover {
   color: #F3702E;
 }
-.widget-box-home-post .box-home .box-content-split .box-header-wrap {
+.box-home-wrap .box-home .box-content-split .box-header-wrap {
   float: left;
   overflow: hidden;
 }
-.widget-box-home-post .box-home .box-content-split .box-header-wrap .bkg-element-wrap {
+.box-home-wrap .box-home .box-content-split .box-header-wrap .bkg-element-wrap {
   width: 320px;
   height: 220px;
 }
-.widget-box-home-post .box-home .box-content-split .box-content {
+.box-home-wrap .box-home .box-content-split .box-content {
   padding-left: 330px;
 }
 @media only screen and (max-width: 1024px) {
-  .widget-box-home-post .box-home .box-content-split .box-header-wrap .bkg-element-wrap {
+  .box-home-wrap .box-home .box-content-split .box-header-wrap .bkg-element-wrap {
     width: 160px;
     height: 120px;
   }
-  .widget-box-home-post .box-home .box-content-split .box-content {
+  .box-home-wrap .box-home .box-content-split .box-content {
     padding-left: 170px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .widget-box-home-post .box-home .box-content-split .box-header-wrap {
+  .box-home-wrap .box-home .box-content-split .box-header-wrap {
     float: none;
     margin-bottom: 1.5em;
   }
-  .widget-box-home-post .box-home .box-content-split .box-header-wrap .bkg-element-wrap {
+  .box-home-wrap .box-home .box-content-split .box-header-wrap .bkg-element-wrap {
     width: 100%;
     height: 120px;
   }
-  .widget-box-home-post .box-home .box-content-split .box-content {
+  .box-home-wrap .box-home .box-content-split .box-content {
     padding-left: 0;
   }
 }
@@ -9576,6 +10213,24 @@ Basic - The basic widget defines the styles of widget having text and background
 }
 .widget-basic .widget-content-wrap .widget-footer .widget-footer-info + .widget-footer-content {
   margin-top: 0.5rem;
+}
+
+.widget-card-model {
+  background-color: #FFFFFF;
+  color: #3F3F46;
+}
+.widget-card-model .widget-content-wrap .widget-header-wrap .widget-header {
+  background-color: #000000;
+  color: #FFFFFF;
+  font: Fira Sans Medium, Sans-Serif, Arial;
+  font-size: 1.58em;
+  padding: 1rem;
+}
+
+.widget-box-home-post {
+  background-color: #FFFFFF;
+  color: #3F3F46;
+  padding: 1rem;
 }
 
 /**********************************************************************
@@ -9863,14 +10518,22 @@ Usage: Max Blocks can be used to divide page into multiple sections.
   text-align: center;
 }
 
-.block-max-area .block-content-wrap {
+.block-max-content .block-content-wrap {
   padding: 0;
 }
-.block-max-area .block-content-wrap .block-content {
+.block-max-content .block-content-wrap .block-content {
   width: 100%;
   height: 100%;
 }
-.block-max-area .block-content-wrap .block-content .block-content-buffer {
+
+.block-max-buffer .block-content-wrap {
+  padding: 0;
+}
+.block-max-buffer .block-content-wrap .block-content {
+  width: 100%;
+  height: 100%;
+}
+.block-max-buffer .block-content-wrap .block-content .block-content-buffer {
   width: 100%;
   height: 100%;
 }
@@ -10069,6 +10732,16 @@ page background and even content wrapper background in the form of image or text
   top: -50%;
   left: 0;
   z-index: 5;
+}
+.page .page-bkg-fluid {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+.page .page-bkg-fluid img {
+  width: 100%;
 }
 .page > .texture {
   z-index: 10;
@@ -10271,6 +10944,22 @@ Details: It defines the styles of default layout of page component as listed bel
 }
 .page-default .page-content-wrap .page-content .page-content-data {
   text-align: justify;
+}
+@media only screen and (max-width: 1024px) {
+  .page-default .page-content-wrap .page-header-wrap.page-header-banner {
+    height: 280px;
+  }
+  .page-default .page-content-wrap .page-header-wrap .page-header {
+    max-height: 280px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .page-default .page-content-wrap .page-header-wrap.page-header-banner {
+    height: 180px;
+  }
+  .page-default .page-content-wrap .page-header-wrap .page-header {
+    max-height: 180px;
+  }
 }
 
 .page-default .page-content-wrap .page-content-row {

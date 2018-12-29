@@ -53,12 +53,13 @@ class PrivateAssets extends AssetBundle {
 		$this->js[] = 'scripts/apix/private.js';
 		$this->js[] = 'scripts/apps/private.js';
 		$this->js[] = 'scripts/apps/core/services/user.js';
+		$this->js[] = 'scripts/apps/core/controllers/site.js';
 		$this->js[] = 'scripts/apps/core/controllers/main.js';
 		$this->js[] = 'scripts/apps/core/controllers/user.js';
+
 		$this->js[] = 'scripts/main.js';
 		$this->js[] = 'scripts/search.js';
 
-		$this->depends[] = 'foxslider\widgets\assets\FxsAssets';
 		$this->depends[] = 'themes\news\assets\vapps\CoreAssets';
 		$this->depends[] = 'themes\news\assets\vapps\NotifyAssets';
 	}
