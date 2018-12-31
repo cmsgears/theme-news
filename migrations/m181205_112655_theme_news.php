@@ -25,7 +25,7 @@ use cmsgears\core\common\utilities\DateUtil;
  *
  * @since 1.0.0
  */
-class m181201_112655_theme_news extends \cmsgears\core\common\base\Migration {
+class m181205_112655_theme_news extends \cmsgears\core\common\base\Migration {
 
 	// Public variables
 
@@ -271,7 +271,7 @@ class m181201_112655_theme_news extends \cmsgears\core\common\base\Migration {
 
     public function down() {
 
-        echo "m181201_112655_theme_news will be deleted with m160621_014408_core.\n";
+        echo "m181205_112655_theme_news will be deleted with m160621_014408_core.\n";
 
         return true;
     }

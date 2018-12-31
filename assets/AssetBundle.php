@@ -49,15 +49,17 @@ class AssetBundle extends BaseAssetBundle {
 	/**
 	 * @inheritdoc
 	 */
-    public $js = [
+	public $js = [
 		// vendor
 		// templates
         'scripts/templates/public.js',
 		// apix
 		'scripts/apix/public.js',
 		// apps
-        'scripts/apps/public.js'
-    ];
+		'scripts/apps/autoload.js',
+        'scripts/apps/public.js',
+		'scripts/apps/core/controllers/site.js'
+	];
 
 	/**
 	 * @inheritdoc
