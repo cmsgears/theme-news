@@ -301,7 +301,7 @@ Notes:
   background-color: rgba(63, 63, 70, 0.6);
 }
 .transparent-bkg.transparent-bkg-tertiary {
-  background-color: rgba(243, 112, 46, 0.6);
+  background-color: rgba(0, 113, 189, 0.6);
 }
 .transparent-bkg.transparent-bkg-gray {
   background-color: rgba(127, 127, 127, 0.6);
@@ -716,9 +716,9 @@ Notes:
   box-shadow: 1px 1px 5px 0 rgba(63, 63, 70, 0.6);
 }
 .shadow.shadow-tertiary {
-  -webkit-box-shadow: 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
-  -moz-box-shadow: 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
-  box-shadow: 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
+  -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
+  -moz-box-shadow: 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
+  box-shadow: 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
 }
 .shadow.shadow-white {
   -webkit-box-shadow: 1px 1px 5px 0 rgba(255, 255, 255, 0.6);
@@ -832,9 +832,9 @@ Notes:
   box-shadow: inset 1px 1px 5px 0 rgba(63, 63, 70, 0.6);
 }
 .shadow-inset.shadow-inset-tertiary {
-  -webkit-box-shadow: inset 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
-  -moz-box-shadow: inset 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
-  box-shadow: inset 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
+  -webkit-box-shadow: inset 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
+  -moz-box-shadow: inset 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
+  box-shadow: inset 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
 }
 .shadow-inset.shadow-inset-white {
   -webkit-box-shadow: inset 1px 1px 5px 0 rgba(255, 255, 255, 0.6);
@@ -948,9 +948,9 @@ Notes:
   text-shadow: 1px 1px 5px 0 rgba(63, 63, 70, 0.6);
 }
 .text-shadow.text-shadow-tertiary {
-  -webkit-text-shadow: 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
-  -moz-text-shadow: 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
-  text-shadow: 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
+  -webkit-text-shadow: 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
+  -moz-text-shadow: 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
+  text-shadow: 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
 }
 .text-shadow.text-shadow-white {
   -webkit-text-shadow: 1px 1px 5px 0 rgba(255, 255, 255, 0.6);
@@ -1064,9 +1064,9 @@ Notes:
   text-shadow: inset 1px 1px 5px 0 rgba(63, 63, 70, 0.6);
 }
 .text-shadow-inset.text-shadow-inset-tertiary {
-  -webkit-text-shadow: inset 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
-  -moz-text-shadow: inset 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
-  text-shadow: inset 1px 1px 5px 0 rgba(243, 112, 46, 0.6);
+  -webkit-text-shadow: inset 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
+  -moz-text-shadow: inset 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
+  text-shadow: inset 1px 1px 5px 0 rgba(0, 113, 189, 0.6);
 }
 .text-shadow-inset.text-shadow-inset-gray {
   -webkit-text-shadow: inset 1px 1px 5px 0 rgba(127, 127, 127, 0.6);
@@ -1202,7 +1202,7 @@ Notes:
   border: 1px solid #3F3F46;
 }
 .border.border-tertiary {
-  border: 1px solid #F3702E;
+  border: 1px solid #0071bd;
 }
 .border.border-top {
   border-top: 1px solid #D1D2D3;
@@ -1226,7 +1226,7 @@ Notes:
   border-top: 1px solid #3F3F46;
 }
 .border.border-top.border-top-tertiary {
-  border-top: 1px solid #F3702E;
+  border-top: 1px solid #0071bd;
 }
 .border.border-right {
   border-right: 1px solid #D1D2D3;
@@ -1250,7 +1250,7 @@ Notes:
   border-right: 1px solid #3F3F46;
 }
 .border.border-right.border-right-tertiary {
-  border-right: 1px solid #F3702E;
+  border-right: 1px solid #0071bd;
 }
 .border.border-bottom {
   border-bottom: 1px solid #D1D2D3;
@@ -1274,7 +1274,7 @@ Notes:
   border-bottom: 1px solid #3F3F46;
 }
 .border.border-bottom.border-bottom-tertiary {
-  border-bottom: 1px solid #F3702E;
+  border-bottom: 1px solid #0071bd;
 }
 .border.border-left {
   border-left: 1px solid #D1D2D3;
@@ -1298,7 +1298,7 @@ Notes:
   border-left: 1px solid #3F3F46;
 }
 .border.border-left.border-left-tertiary {
-  border-left: 1px solid #F3702E;
+  border-left: 1px solid #0071bd;
 }
 
 .gradient.gradient-linear {
@@ -2691,68 +2691,74 @@ html, body {
   width: 100%;
 }
 .width.width-auto {
-  width: auto;
+  width: auto !important;
 }
 .width.width-1 {
-  width: 1%;
+  width: 1% !important;
 }
 .width.width-5 {
-  width: 5%;
+  width: 5% !important;
 }
 .width.width-10 {
-  width: 10%;
+  width: 10% !important;
 }
 .width.width-25 {
-  width: 25%;
+  width: 25% !important;
 }
 .width.width-50 {
-  width: 50%;
+  width: 50% !important;
 }
 .width.width-75 {
-  width: 75%;
+  width: 75% !important;
 }
 .width.width-80 {
-  width: 80%;
+  width: 80% !important;
+}
+.width.width-100 {
+  width: 100% !important;
 }
 .width.width-default {
-  width: 64px;
+  width: 64px !important;
 }
 .width.width-small {
-  width: 128px;
+  width: 128px !important;
 }
 .width.width-medium {
-  width: 256px;
+  width: 256px !important;
 }
 .width.width-large {
-  width: 512px;
+  width: 512px !important;
 }
 
 .height {
   height: 100%;
 }
 .height.height-auto {
-  height: auto;
+  height: auto !important;
 }
 .height.height-25 {
-  height: 25%;
+  height: 25% !important;
 }
 .height.height-50 {
-  height: 50%;
+  height: 50% !important;
 }
 .height.height-75 {
-  height: 75%;
+  height: 75% !important;
+}
+.height.height-100 {
+  height: 100% !important;
 }
 .height.height-default {
-  height: 64px;
+  height: 64px !important;
 }
 .height.height-small {
-  height: 128px;
+  height: 128px !important;
 }
 .height.height-medium {
-  height: 256px;
+  height: 256px !important;
 }
 .height.height-large {
-  height: 512px;
+  height: 512px !important;
 }
 
 /**
@@ -3114,10 +3120,10 @@ Details: It defines the text and background colors as listed below:
    * 7. secondary: #3F3F46
    * 8. secondary text: #888888
    * 9. secondary light: #FFFFFF
-   * 10. secondary text light: #888888
+   * 10. secondary text light: #3F3F46
    * 11. secondary dark: #000000
    * 12. secondary text dark: #FFFFFF
-   * 13. tertiary: #F3702E
+   * 13. tertiary: #0071bd
    * 14. tertiary text: #FFFFFF
    * 15. tertiary light: #EAECF1
    * 16. tertiary text light: #F3702E
@@ -3143,14 +3149,14 @@ Details: It defines the text and background colors as listed below:
 }
 .color.color-secondary-l {
   background-color: #FFFFFF !important;
-  color: #888888 !important;
+  color: #3F3F46 !important;
 }
 .color.color-secondary-d {
   background-color: #000000 !important;
   color: #FFFFFF !important;
 }
 .color.color-tertiary {
-  background-color: #F3702E !important;
+  background-color: #0071bd !important;
   color: #FFFFFF !important;
 }
 .color.color-tertiary-l {
@@ -3289,7 +3295,7 @@ Details: It defines the text and background colors as listed below:
   background-color: #000000 !important;
 }
 .bkg.bkg-tertiary {
-  background-color: #F3702E !important;
+  background-color: #0071bd !important;
 }
 .bkg.bkg-tertiary-l {
   background-color: #EAECF1 !important;
@@ -3441,7 +3447,7 @@ Details: It defines the text and background colors as listed below:
   color: #888888 !important;
 }
 .text.text-secondary-l {
-  color: #888888 !important;
+  color: #3F3F46 !important;
 }
 .text.text-secondary-d {
   color: #FFFFFF !important;
@@ -3456,7 +3462,7 @@ Details: It defines the text and background colors as listed below:
   color: #FFFFFF !important;
 }
 .text.text-link {
-  color: #F3702E !important;
+  color: #1E96FF !important;
 }
 .text.text-black {
   color: #000000 !important;
@@ -4061,16 +4067,16 @@ p, span, em, div, a {
 .reader h1, .reader h2, .reader h3, .reader h4, .reader h5, .reader h6, .reader .h1, .reader .h2, .reader .h3, .reader .h4, .reader .h5, .reader .h6, .reader .heading {
   padding: 0.5em 0;
 }
-.reader .reader-left {
+.reader.reader-left {
   text-align: left !important;
 }
-.reader .reader-center {
+.reader.reader-center {
   text-align: center !important;
 }
-.reader .reader-right {
+.reader.reader-right {
   text-align: right !important;
 }
-.reader .reader-justify {
+.reader.reader-justify {
   text-align: justify !important;
 }
 .reader ol li {
@@ -4211,7 +4217,7 @@ code, pre {
 }
 
 a, .link {
-  color: #F3702E;
+  color: #1E96FF;
   cursor: pointer;
   -moz-transition: color 250ms ease-in-out 0s;
   -ms-transition: color 250ms ease-in-out 0s;
@@ -4223,7 +4229,7 @@ a.btn, .link.btn {
   color: #FFFFFF;
 }
 a:link, a:visited, .link:link, .link:visited {
-  color: #F3702E;
+  color: #1E96FF;
 }
 a:active, a:hover, .link:active, .link:hover {
   color: #E74343;
@@ -4265,16 +4271,16 @@ a:active, a:hover, .link:active, .link:hover {
 }
 
 html, body {
-  font-size: 10px;
+  font-size: 14px;
 }
 @media only screen and (min-width: 481px) {
   html, body {
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 @media only screen and (min-width: 1025px) {
   html, body {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 
@@ -5311,49 +5317,49 @@ Details: It defines the grid system and basic containers as listed below:
 }
 
 .shape.shape-square.shape-square-small {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 50px;
   height: 50px;
 }
 .shape.shape-square.shape-square-medium {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 100px;
   height: 100px;
 }
 .shape.shape-square.shape-square-large {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 250px;
   height: 250px;
 }
 .shape.shape-square.shape-square-xlarge {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 500px;
   height: 500px;
 }
 .shape.shape-rectangle.shape-rectangle-small {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 75px;
   height: 50px;
 }
 .shape.shape-rectangle.shape-rectangle-medium {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 150px;
   height: 100px;
 }
 .shape.shape-rectangle.shape-rectangle-large {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 325px;
   height: 250px;
 }
 .shape.shape-rectangle.shape-rectangle-xlarge {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 750px;
   height: 500px;
@@ -5362,25 +5368,25 @@ Details: It defines the grid system and basic containers as listed below:
   border-radius: 50%;
 }
 .shape.shape-circle.shape-circle-small {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 50px;
   height: 50px;
 }
 .shape.shape-circle.shape-circle-medium {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 100px;
   height: 100px;
 }
 .shape.shape-circle.shape-circle-large {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 250px;
   height: 250px;
 }
 .shape.shape-circle.shape-circle-xlarge {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 500px;
   height: 500px;
@@ -5389,25 +5395,25 @@ Details: It defines the grid system and basic containers as listed below:
   border-radius: 100%/50%;
 }
 .shape.shape-oval.shape-oval-small {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 50px;
   height: 50px;
 }
 .shape.shape-oval.shape-oval-medium {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 100px;
   height: 100px;
 }
 .shape.shape-oval.shape-oval-large {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 250px;
   height: 250px;
 }
 .shape.shape-oval.shape-oval-xlarge {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 500px;
   height: 500px;
@@ -5417,13 +5423,13 @@ Details: It defines the grid system and basic containers as listed below:
   height: 0;
 }
 .shape.shape-triangle.shape-triangle-small {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 25px;
   height: 50px;
 }
 .shape.shape-triangle.shape-triangle-medium {
-  background: #F3702E;
+  background: #0071bd;
   color: #FFFFFF;
   width: 50px;
   height: 100px;
@@ -5584,7 +5590,7 @@ Details: It defines the grid system and basic containers as listed below:
   transition: color 420ms ease-in-out 0s, background-color 420ms ease-in-out 0s;
 }
 .hover-color-tertiary:hover {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
 }
 
@@ -5642,7 +5648,7 @@ Details: It defines the grid system and basic containers as listed below:
   transition: background-color 420ms ease-in-out 0s;
 }
 .hover-bkg-tertiary:hover {
-  background-color: #F3702E;
+  background-color: #0071bd;
 }
 
 .hover-bkg-white {
@@ -6725,7 +6731,7 @@ Details: It defines the custom element styles as listed below:
   color: #FFFFFF;
 }
 .btn.btn-tertiary {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
 }
 .btn.btn-tertiary:hover {
@@ -6733,7 +6739,7 @@ Details: It defines the custom element styles as listed below:
   color: #FFFFFF;
 }
 .btn.btn-link {
-  background-color: #F3702E;
+  background-color: #1E96FF;
   color: #FFFFFF;
 }
 .btn.btn-link:hover {
@@ -6889,24 +6895,24 @@ Details: It defines the custom element styles as listed below:
   background-color: #3F3F46 !important;
 }
 .btn-border.btn-border-tertiary {
-  color: #F3702E !important;
-  -webkit-box-shadow: inset 0 0 0 1px #F3702E;
-  -moz-box-shadow: inset 0 0 0 1px #F3702E;
-  box-shadow: inset 0 0 0 1px #F3702E;
+  color: #0071bd !important;
+  -webkit-box-shadow: inset 0 0 0 1px #0071bd;
+  -moz-box-shadow: inset 0 0 0 1px #0071bd;
+  box-shadow: inset 0 0 0 1px #0071bd;
 }
 .btn-border.btn-border-tertiary:hover {
   color: #FFFFFF !important;
-  background-color: #F3702E !important;
+  background-color: #0071bd !important;
 }
 .btn-border.btn-border-link {
-  color: #F3702E !important;
-  -webkit-box-shadow: inset 0 0 0 1px #F3702E;
-  -moz-box-shadow: inset 0 0 0 1px #F3702E;
-  box-shadow: inset 0 0 0 1px #F3702E;
+  color: #1E96FF !important;
+  -webkit-box-shadow: inset 0 0 0 1px #1E96FF;
+  -moz-box-shadow: inset 0 0 0 1px #1E96FF;
+  box-shadow: inset 0 0 0 1px #1E96FF;
 }
 .btn-border.btn-border-link:hover {
   color: #FFFFFF !important;
-  background-color: #F3702E !important;
+  background-color: #1E96FF !important;
 }
 .btn-border.btn-border-white {
   color: #000000 !important;
@@ -7108,7 +7114,7 @@ a:hover, .link:hover {
   overflow: hidden;
   text-align: center;
   vertical-align: middle;
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
   -webkit-border-radius: 100%;
   -khtml-border-radius: 100%;
@@ -7341,7 +7347,7 @@ input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hove
 }
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select:focus, .form .cmt-select-wrap .cmt-selected:focus {
   background-color: #EAECF1;
-  color: #F3702E;
+  color: #1E96FF;
   -webkit-box-shadow: inset 0 0 0 1px #F3702E;
   -moz-box-shadow: inset 0 0 0 1px #F3702E;
   box-shadow: inset 0 0 0 1px #F3702E;
@@ -7367,7 +7373,7 @@ input[type="text"]:disabled, input[type="email"]:disabled, input[type="password"
   color: #3F3F46;
 }
 .form .cmt-checkbox:focus, .form .cmt-switch:focus {
-  color: #F3702E;
+  color: #1E96FF;
 }
 .form .cmt-checkbox:disabled, .form .cmt-switch:disabled {
   color: #909090 !important;
@@ -7498,24 +7504,24 @@ label, input[type="text"], input[type="email"], input[type="password"], textarea
 
 ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
-  color: #D1D2D3;
+  color: #A5A5A5;
 }
 
 :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: #D1D2D3;
+  color: #A5A5A5;
   opacity: 1;
 }
 
 ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  color: #D1D2D3;
+  color: #A5A5A5;
   opacity: 1;
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #D1D2D3;
+  color: #A5A5A5;
 }
 
 .cmt-checkbox, .cmt-switch {
@@ -7737,9 +7743,6 @@ label, input[type="text"], input[type="email"], input[type="password"], textarea
 }
 
 input[type="text"], input[type="email"], input[type="password"], textarea, select {
-  -webkit-box-shadow: inset 0 0 0 1px #F3702E;
-  -moz-box-shadow: inset 0 0 0 1px #F3702E;
-  box-shadow: inset 0 0 0 1px #F3702E;
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -7747,9 +7750,9 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
   font-family: Blogger Sans Light, Sans-Serif, Arial !important;
 }
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
-  -webkit-box-shadow: inset 0 0 0 1px #F3702E;
-  -moz-box-shadow: inset 0 0 0 1px #F3702E;
-  box-shadow: inset 0 0 0 1px #F3702E;
+  -webkit-box-shadow: inset 0 0 0 1px #1E96FF;
+  -moz-box-shadow: inset 0 0 0 1px #1E96FF;
+  box-shadow: inset 0 0 0 1px #1E96FF;
 }
 
 input[type="submit"], input[type="button"], button, .btn, .btn-icon {
@@ -7789,8 +7792,15 @@ input[type="submit"], input[type="button"], button, .btn, .btn-icon {
   color: #E74343 !important;
   margin-bottom: 0.5em;
 }
+.form .frm-split-40-60 .help-block {
+  padding-left: 40%;
+}
+.form .frm-split-40-60 label {
+  padding-bottom: 0;
+}
 .form label {
   font-weight: bold;
+  padding: 0.5em 0;
 }
 
 /**********************************************************************
@@ -7914,7 +7924,7 @@ Border Accordian - It's extension of Basic Accordian with default borders.
 }
 
 .accordian-basic .accordian-tab .accordian-trigger {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
   font-family: Fira Sans Medium, Sans-Serif, Arial;
   font-size: 1.08em;
@@ -7928,7 +7938,7 @@ Border Accordian - It's extension of Basic Accordian with default borders.
 }
 .accordian-basic.accordian-primary .accordian-tab .accordian-trigger {
   background-color: #F4F6F8;
-  color: #F3702E;
+  color: #0071bd;
 }
 .accordian-basic.accordian-primary .accordian-tab .accordian-view {
   background-color: #F4F6F8;
@@ -7944,13 +7954,13 @@ Border Accordian - It's extension of Basic Accordian with default borders.
 }
 
 .accordian-border .accordian-tab .accordian-trigger.active {
-  border-left: 2px solid #F3702E;
+  border-left: 2px solid #0071bd;
 }
 .accordian-border .accordian-tab .accordian-view {
   border: 1px solid #D1D2D3;
 }
 .accordian-border .accordian-tab .accordian-view.active {
-  border-left: 2px solid #F3702E;
+  border-left: 2px solid #0071bd;
 }
 
 /**********************************************************************
@@ -8089,7 +8099,7 @@ Details: It defines the menu components as listed below:
   text-transform: uppercase;
 }
 .hnav-basic > li:hover > a {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
 }
 .hnav-basic li a {
@@ -8195,7 +8205,7 @@ Details: It defines the menu components as listed below:
   transition: color 420ms ease-in-out 0s, background-color 420ms ease-in-out 0s;
 }
 .vnav-basic li:hover > a {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
 }
 .vnav-basic li:hover > .nav-sub {
@@ -8294,7 +8304,7 @@ Details: It defines the menu components as listed below:
   text-align: left;
 }
 .vnav-slider-wrap .vnav-slider-content ul li a:hover {
-  color: #F3702E;
+  color: #1E96FF;
 }
 
 /**********************************************************************
@@ -8521,8 +8531,10 @@ Details: It defines the social network menu components as listed below:
 }
 #menu-main li a {
   text-align: center;
-  padding: 0 2em;
+  padding: 0 1.5em;
   color: #FFFFFF;
+  text-transform: none;
+  font-weight: bold;
   -webkit-transition: all 250ms linear 0s;
   -moz-transition: all 250ms linear 0s;
   -ms-transition: all 250ms linear 0s;
@@ -8530,12 +8542,12 @@ Details: It defines the social network menu components as listed below:
   transition: all 250ms linear 0s;
 }
 #menu-main li a:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: #F3702E;
+  background-color: #000000;
+  color: #1E96FF;
 }
 #menu-main li.active a {
-  background-color: #FFFFFF;
-  color: #F3702E;
+  background-color: #000000;
+  color: #1E96FF;
 }
 
 .menu-main-wrap #menu-main {
@@ -8545,20 +8557,20 @@ Details: It defines the social network menu components as listed below:
   border-bottom: 2px solid #D1D2D3;
 }
 .menu-main-wrap #menu-main li.active {
-  border-bottom: 2px solid #F3702E;
+  border-bottom: 2px solid #1E96FF;
   padding-top: 4px;
   line-height: 74px;
 }
 .menu-main-wrap #menu-main li.active a {
   background-color: transparent;
-  color: #F3702E;
+  color: #1E96FF;
 }
 .menu-main-wrap #menu-main li a {
   color: #F3702E;
 }
 .menu-main-wrap #menu-main li a:hover {
   background-color: transparent;
-  color: #F3702E;
+  color: #1E96FF;
 }
 @media only screen and (max-width: 1024px) {
   .menu-main-wrap {
@@ -8599,7 +8611,7 @@ Details: It defines the styles for header components as listed below:
  * Mobile Menu - Placed on right side, hidden for desktop
  */
 .header-basic {
-  background-color: #262626;
+  background-color: #3F3F46;
   color: #F3702E;
   position: relative;
   z-index: 10001;
@@ -8630,7 +8642,7 @@ Details: It defines the styles for header components as listed below:
     right: 0;
   }
   .header-basic #menu-main-mobile li {
-    box-shadow: 0 -4px 2px -5px #F3702E;
+    box-shadow: 0 -4px 2px -5px #0071bd;
   }
   .header-basic #menu-main-mobile li a, .header-basic #menu-main-mobile li .link {
     background-color: #FFFFFF;
@@ -8644,10 +8656,10 @@ Details: It defines the styles for header components as listed below:
   }
   .header-basic #menu-main-mobile li a:hover, .header-basic #menu-main-mobile li .link:hover {
     background-color: #F4F6F8;
-    color: #F3702E;
+    color: #1E96FF;
   }
   .header-basic #menu-main-mobile li:active a, .header-basic #menu-main-mobile li:active .link {
-    background-color: #F3702E;
+    background-color: #0071bd;
     color: #FFFFFF;
   }
   .header-basic #mobile-actions {
@@ -8670,7 +8682,7 @@ Details: It defines the styles for header components as listed below:
     transition: all 250ms ease-in-out 0s;
   }
   .header-basic #mobile-actions .mobile-action:hover {
-    color: #F3702E;
+    color: #1E96FF;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -8733,6 +8745,7 @@ Details: It defines the styles for header components as listed below:
 @media only screen and (max-width: 1024px) {
   .header-basic #mobile-actions .mobile-action {
     color: #FFFFFF;
+    font-size: 1.5em;
   }
 }
 @media only screen and (min-width: 1025px) {
@@ -8740,6 +8753,12 @@ Details: It defines the styles for header components as listed below:
     height: 80px;
     line-height: 80px;
     padding: 0px;
+  }
+  .header-basic .header-logo {
+    padding: 10px 10px 10px 0;
+  }
+  .header-basic .header-logo .logo img {
+    height: auto;
   }
 }
 
@@ -8828,7 +8847,7 @@ Details: It defines the styles for footer components as listed below:
 }
 
 .footer-basic {
-  background-color: #262626;
+  background-color: #3F3F46;
   color: #888888;
   width: 100%;
   min-height: 50px;
@@ -8838,23 +8857,22 @@ Details: It defines the styles for footer components as listed below:
 
 .footer-basic {
   min-height: 200px;
-  padding: 2em 0;
+  padding: 3em 0;
 }
 .footer-basic .footer-col .col-header {
-  color: #888888;
+  color: #FFFFFF;
   padding-bottom: 1.5em;
 }
 .footer-basic #menu-links li {
-  width: 49%;
+  display: block;
 }
 .footer-basic #menu-links li a, .footer-basic #menu-links li .link {
   padding-bottom: 1em;
-  color: #888888;
 }
 .footer-basic .blog-post {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 60px;
   margin: 0 0.5em 0.5em 0;
   overflow: hidden;
   border: 2px solid #3F3F46;
@@ -8876,31 +8894,32 @@ Details: It defines the styles for footer components as listed below:
 }
 @media only screen and (max-width: 1024px) {
   .footer-basic {
-    padding: 3em 1em 2em 1em;
+    padding: 3em 1em 0 1em;
   }
   .footer-basic .footer-col {
     margin-bottom: 2em;
   }
   .footer-basic .footer-newsletter-wrap form {
     display: inline-block;
-    width: 200px;
+    width: 50%;
   }
 }
-@media only screen and (max-width: 480px) {
-  .footer-basic .footer-newsletter-wrap {
-    text-align: center;
+@media only screen and (max-width: 768px) {
+  .footer-basic .footer-newsletter-wrap form {
+    width: 100%;
   }
 }
 
 .footer-copyright {
-  background-color: #888888;
-  text: #3F3F46;
+  background-color: #000000;
+  color: #888888;
   z-index: 10001;
-}
-.footer-copyright .btn {
-  position: absolute;
-  right: 0;
-  margin-top: -1.5em;
+  /*
+  .btn {
+  	position: absolute;
+  	right: 0;
+  	margin-top: -1.5em;
+  } */
 }
 
 /**********************************************************************
@@ -9034,7 +9053,7 @@ Details: It defines the styles for popup components as listed below:
   color: #888888;
 }
 .popup-basic .popup-data .popup-header {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
   padding: 1rem;
 }
@@ -9144,7 +9163,7 @@ Details: It defines the styles of cmt slider as listed below:
   text-align: center;
 }
 .slider-basic .slider-control {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
   top: 35px;
   width: 64px;
@@ -9551,7 +9570,7 @@ Details: It defines the styles of card components as listed below:
   color: #888888;
 }
 .card.card-tertiary {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
 }
 
@@ -9709,7 +9728,7 @@ background banner of Block.
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  color: #F3702E;
+  color: #0071bd;
   font-size: 60px;
 }
 .card-info-icon.card-info-icon-itiny .card-content-wrap .card-header .card-header-icon {
@@ -9754,7 +9773,7 @@ background banner of Block.
   color: #3F3F46;
 }
 .card-info-icon.card-info-icon-tertiary .card-content-wrap .card-header .card-header-icon .icon {
-  color: #F3702E;
+  color: #0071bd;
 }
 @media only screen and (max-width: 1024px) {
   .card-info-icon .card-header-icon {
@@ -9779,7 +9798,7 @@ background banner of Block.
   background-color: #3F3F46;
 }
 .card-info-icon-box .card-info-icon-bbox-tertiary .card-header-icon {
-  background-color: #F3702E;
+  background-color: #0071bd;
 }
 
 .card-info-icon-round .card-header-icon {
@@ -9823,7 +9842,7 @@ background banner of Block.
   overflow: hidden;
   text-align: center;
   vertical-align: middle;
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
   -webkit-border-radius: 100%;
   -khtml-border-radius: 100%;
@@ -9831,34 +9850,52 @@ background banner of Block.
   border-radius: 100%;
 }
 
+.card-model-wrap {
+  padding: 0.75em 0;
+}
 .card-model-wrap .card-model {
-  padding: 1rem;
+  padding: 0.75rem 1.5rem;
 }
 .card-model-wrap .card-model .card-content-wrap {
-  padding-bottom: 1em;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid #D1D2D3;
 }
 .card-model-wrap .card-model .card-content-wrap .card-content .card-content-title {
-  font: Fira Sans Medium, Sans-Serif, Arial;
-  font-size: 1.33em;
+  font-family: Fira Sans Medium, Sans-Serif, Arial;
   margin-bottom: 1rem;
 }
 .card-model-wrap .card-model .card-content-wrap .card-content .card-content-title a {
   color: #3F3F46;
 }
 .card-model-wrap .card-model .card-content-wrap .card-content .card-content-title a:hover {
-  color: #F3702E;
+  color: #1E96FF;
 }
 .card-model-wrap .card-model .card-content-wrap.card-content-split .card-header {
   float: left;
   overflow: hidden;
 }
-.card-model-wrap .card-model .card-content-wrap.card-content-split .card-header .bkg-element-wrap {
+.card-model-wrap .card-model .card-content-wrap.card-content-split .card-header .card-bkg {
   width: 100px;
   height: 80px;
+  position: relative;
 }
 .card-model-wrap .card-model .card-content-wrap.card-content-split .card-content {
-  padding-left: 110px;
+  padding-left: 120px;
+}
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .card-model-wrap .card-model .card-content-wrap.card-content-split .card-header {
+    float: none;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .card-model-wrap .card-model .card-content-wrap.card-content-split .card-header .card-bkg {
+    width: 100%;
+    height: 80px;
+  }
+  .card-model-wrap .card-model .card-content-wrap.card-content-split .card-content {
+    padding-left: 0;
+  }
 }
 
 /**********************************************************************
@@ -9940,7 +9977,7 @@ Details: It defines the styles of box components as listed below:
   color: #888888;
 }
 .box.box-tertiary {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
 }
 
@@ -10028,8 +10065,12 @@ Usage: Boxes can be used to to show data of models.
 .box-home-wrap .box-home .box-content-wrap {
   margin-bottom: 1.5em;
 }
+.box-home-wrap .box-home .box-content-wrap .box-header-wrap .box-header {
+  width: 100%;
+  height: 220px;
+}
 .box-home-wrap .box-home .box-content-wrap .box-content .box-content-title {
-  font: Fira Sans Medium, Sans-Serif, Arial;
+  font-family: Fira Sans Medium, Sans-Serif, Arial;
   font-size: 1.58em;
   margin: 0.75em 0;
 }
@@ -10037,36 +10078,29 @@ Usage: Boxes can be used to to show data of models.
   color: #3F3F46;
 }
 .box-home-wrap .box-home .box-content-wrap .box-content .box-content-title a:hover {
-  color: #F3702E;
+  color: #1E96FF;
 }
 .box-home-wrap .box-home .box-content-split .box-header-wrap {
   float: left;
   overflow: hidden;
+  width: 40%;
 }
 .box-home-wrap .box-home .box-content-split .box-header-wrap .bkg-element-wrap {
-  width: 320px;
+  width: 100%;
   height: 220px;
 }
 .box-home-wrap .box-home .box-content-split .box-content {
-  padding-left: 330px;
-}
-@media only screen and (max-width: 1024px) {
-  .box-home-wrap .box-home .box-content-split .box-header-wrap .bkg-element-wrap {
-    width: 160px;
-    height: 120px;
-  }
-  .box-home-wrap .box-home .box-content-split .box-content {
-    padding-left: 170px;
-  }
+  padding-left: 43%;
 }
 @media only screen and (max-width: 480px) {
   .box-home-wrap .box-home .box-content-split .box-header-wrap {
     float: none;
     margin-bottom: 1.5em;
-  }
-  .box-home-wrap .box-home .box-content-split .box-header-wrap .bkg-element-wrap {
     width: 100%;
-    height: 120px;
+  }
+  .box-home-wrap .box-home .box-content-split .box-header-wrap .box-header {
+    width: 100%;
+    height: 160px;
   }
   .box-home-wrap .box-home .box-content-split .box-content {
     padding-left: 0;
@@ -10097,7 +10131,7 @@ Usage: Boxes can be used to to show data of models.
   color: #3F3F46;
 }
 .widget-box-search-post .box-page-search .box-content-wrap .box-content .box-content-title a:hover {
-  color: #F3702E;
+  color: #1E96FF;
 }
 @media only screen and (max-width: 1024px) {
   .widget-box-search-post .box-page-search {
@@ -10176,7 +10210,7 @@ Basic - The basic widget defines the styles of widget having text and background
   color: #888888;
 }
 .widget.widget-tertiary {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
 }
 
@@ -10228,22 +10262,43 @@ Basic - The basic widget defines the styles of widget having text and background
   margin-top: 0.5rem;
 }
 
+.widget-basic .widget-content-wrap .widget-header .widget-header-title {
+  font-size: 1.08em;
+}
+
+.widget-search {
+  background-color: #FFFFFF;
+  color: #3F3F46;
+  padding: 1em;
+}
+
 .widget-card-model {
   background-color: #FFFFFF;
   color: #3F3F46;
 }
 .widget-card-model .widget-content-wrap .widget-header-wrap .widget-header {
-  background-color: #000000;
-  color: #FFFFFF;
+  color: #3F3F46;
   font: Fira Sans Medium, Sans-Serif, Arial;
   font-size: 1.58em;
-  padding: 1rem;
+  padding: 1rem 0;
+  margin: 0 1.5rem;
+  border-bottom: 1px solid #D1D2D3;
 }
 
 .widget-box-home-post {
   background-color: #FFFFFF;
   color: #3F3F46;
-  padding: 1rem;
+  padding: 1rem 2rem;
+}
+@media only screen and (max-width: 1024px) {
+  .widget-box-home-post {
+    padding: 0.5rem 1.5rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .widget-box-home-post {
+    padding: 0 1rem;
+  }
 }
 
 /**********************************************************************
@@ -10402,7 +10457,7 @@ Details: It defines the styles for header components as listed below:
   color: #888888;
 }
 .block.block-tertiary {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
 }
 
@@ -10564,6 +10619,10 @@ Usage: Max Blocks can be used to divide page into multiple sections.
   color: #3F3F46;
 }
 
+.block .block-content-wrap .block-content .block-content-raw .adsbygoogle {
+  background-color: #FFFFFF;
+}
+
 /**********************************************************************
 Description: It defines the styles of the pagination having links to navigate pages.
 
@@ -10643,7 +10702,7 @@ Full - Full pagination having both info and pagination links.
   line-height: 2.1em;
 }
 .pagination-full .page-links .pagination li span, .pagination-full .page-links .pagination li a, .pagination-full .page-links .pagination .page-link span, .pagination-full .page-links .pagination .page-link a {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #888888;
   padding: 0.5em 0.75em;
   text-decoration: none;
@@ -10795,7 +10854,7 @@ page background and even content wrapper background in the form of image or text
   color: #888888;
 }
 .page.page-tertiary {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
 }
 
@@ -10896,7 +10955,7 @@ Details: It defines the styles of default layout of page component as listed bel
   background-color: transparent;
 }
 .page-default .page-content-wrap .page-header-wrap .page-header {
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
   padding: 1em 5%;
   max-height: 320px;
@@ -10936,7 +10995,7 @@ Details: It defines the styles of default layout of page component as listed bel
 }
 .page-default .page-content-wrap .page-content .page-content-banner {
   position: relative;
-  background-color: #F3702E;
+  background-color: #0071bd;
   color: #FFFFFF;
 }
 .page-default .page-content-wrap .page-content .page-content-title {
@@ -10986,7 +11045,7 @@ Details: It defines the styles of default layout of page component as listed bel
   margin-left: 1em;
 }
 .page-default .page-content-wrap .page-content-labels .nav li {
-  background-color: #F3702E;
+  background-color: #0071bd;
   margin-right: 1em;
   -webkit-border-radius: 5px;
   -khtml-border-radius: 5px;
@@ -11066,16 +11125,46 @@ Details: It defines the styles of default layout of page component as listed bel
 .page-default .page-content-wrap .page-content-row {
   padding: 0 5%;
 }
+.page-default .page-content-wrap .page-content-row .page-content hr {
+  border-top: 1px solid #E6E7E8;
+}
+.page-default .page-content-wrap .page-content-row .page-content .page-content-form .page-form {
+  background-color: red;
+}
 @media only screen and (max-width: 1024px) {
-  .page-default .page-content-wrap .page-content-row {
-    padding: 0 5%;
+  .page-default .page-content-wrap .page-content {
+    padding: 1.5em 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .page-default .page-content-wrap .page-header-wrap .page-header {
+    max-height: 280px;
+  }
+  .page-default .page-content-wrap .page-content {
+    padding: 1em 0;
+  }
+}
+.page-default.page-system .page-content-wrap .page-content .page-content-form {
+  margin: 0;
+}
+.page-default.page-system .page-content-wrap .page-content .page-content-form .page-form {
+  background-color: #FFFFFF;
+  color: #3F3F46;
+  width: 520px;
+}
+.page-default.page-system .page-content-wrap .page-content .page-content-form .page-form .text-with-line .text-content {
+  background-color: #FFFFFF;
+}
+@media only screen and (max-width: 768px) {
+  .page-default.page-system .page-content-wrap .page-content .page-content-form .page-form {
+    width: 100%;
   }
 }
 
 .page-model-blog .page-content-wrap .page-content {
   background-color: #FFFFFF;
   color: #3F3F46;
-  padding: 1em;
+  padding: 2em;
   margin-top: 2em;
 }
 .page-model-blog .page-content-wrap .page-content .page-content-banner + .page-content-data {
@@ -11084,15 +11173,37 @@ Details: It defines the styles of default layout of page component as listed bel
 .page-model-blog .page-content-wrap .page-content-comments {
   background-color: #FFFFFF;
   color: #3F3F46;
-  padding: 1em;
+  padding: 2em;
   margin-top: 2em;
 }
 .page-model-blog .page-content-wrap .page-content-disqus {
   background-color: #FFFFFF;
   color: #3F3F46;
-  padding: 1em;
+  padding: 2em;
   margin-top: 2em;
   margin-bottom: 2em;
+}
+@media only screen and (max-width: 1024px) {
+  .page-model-blog .page-content-wrap .page-content {
+    padding: 1.5rem;
+  }
+  .page-model-blog .page-content-wrap .page-content-comments {
+    padding: 1.5rem;
+  }
+  .page-model-blog .page-content-wrap .page-content-disqus {
+    padding: 1.5rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .page-model-blog .page-content-wrap .page-content {
+    padding: 1rem;
+  }
+  .page-model-blog .page-content-wrap .page-content-comments {
+    padding: 1rem;
+  }
+  .page-model-blog .page-content-wrap .page-content-disqus {
+    padding: 1rem;
+  }
 }
 
 /**********************************************************************

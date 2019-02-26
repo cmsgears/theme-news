@@ -35,7 +35,7 @@ $user			= Yii::$app->core->getUser();
 			}
 			else {
 
-				include "$themePath/views/headers/landing.php";
+				include "$themePath/views/headers/public.php";
 			}
 		?>
         <div class="container container-main container-main-landing">

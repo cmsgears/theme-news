@@ -8,7 +8,7 @@ use cmsgears\widgets\elements\Nav;
 // SF Imports
 use themes\news\Theme;
 ?>
-<header id="header-main" class="header header-basic header-basic-duo header-fixed shadow shadow-primary">
+<header id="header-main" class="header header-basic header-basic-duo header-fixed shadow shadow-black">
 	<div class="row">
 		<div class="header-logo">
 			<div class="logo">

@@ -15,3 +15,22 @@
 	background-color: $color-primary-l;
 	color: $color-primary-text-l;
 }
+
+
+// == Ads Block Background ===================
+
+.block {
+
+	.block-content-wrap {
+
+		.block-content {
+
+			.block-content-raw {
+
+				.adsbygoogle {
+					background-color: $color-white;
+				}
+			}
+		}
+	}
+}

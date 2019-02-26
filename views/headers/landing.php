@@ -10,7 +10,7 @@ use themes\news\Theme;
 $banner			= Yii::$app->core->site->banner;
 $headerClass	= isset( $banner ) ? 'header-basic header-landing header-banner' : 'header-basic header-landing header-banner-no';
 ?>
-<header class="header <?= $headerClass ?> shadow shadow-primary">
+<header class="header <?= $headerClass ?> shadow shadow-black">
 	<?php if( isset( $banner ) ) { ?>
 		<div class="max-area bkg-image layer" style="background-image:url(<?= $banner->getFileUrl() ?>);"></div>
 		<div class="texture texture-black layer layer-1"></div>

@@ -12,8 +12,8 @@ $cmtAction		= $widget->cmtAction;
 	</div>
 
 	<div class="frm-actions">
-		<input type="text" name="Newsletter[email]" placeholder="Email *">
-		<input class="submit" type="submit" name="submit" value="<?= $btnText ?>">
+		<input class="rounded rounded-left rounded-left-small" type="text" name="Newsletter[email]" placeholder="Email *">
+		<input class="submit rounded rounded-right rounded-right-small" type="submit" name="submit" value="<?= $btnText ?>">
 	</div>
 
     <div class="frm-field padding padding-small-v">
@@ -23,5 +23,4 @@ $cmtAction		= $widget->cmtAction;
 	<div class="message success"></div>
 	<div class="message warning"></div>
 	<div class="message error"></div>
-	<div class="filler-height"> </div>
 </form>

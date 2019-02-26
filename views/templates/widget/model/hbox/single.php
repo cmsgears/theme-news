@@ -31,13 +31,9 @@ $bannerUrl	= CodeGenUtil::getFileUrl( $content->banner, [ 'image' => $banner ] )
 	<?php if( !empty( $bannerUrl ) ) { ?>
 		<div class="box-header-wrap">
 			<div class="box-header">
-				<div class="bkg-element-wrap">
-					<div class="bkg-element bkg-element-medium">
-						<a href="<?= "{$siteUrl}/blog/{$model->slug}" ?>">
-							<img src="<?= $bannerUrl ?>" title="<?= "{$model->displayName}" ?>" />
-						</a>
-					</div>
-				</div>
+                <a href="<?= Url::to(["/blog/$model->slug"]) ?>">
+                    <img class="fluid" src="<?= $bannerUrl ?>" title="<?= "{$model->displayName}" ?>" />
+                </a>
 			</div>
 		</div>
 	<?php } ?>
@@ -46,11 +42,11 @@ $bannerUrl	= CodeGenUtil::getFileUrl( $content->banner, [ 'image' => $banner ] )
 			<?= $publishedAt ?>
 		</div>
 		<div class="box-content-title reader">
-			<a href="<?= "{$siteUrl}/blog/{$model->slug}" ?>"><?= $model->displayName ?></a>
+			<a href="<?= Url::to(["/blog/$model->slug"]) ?>"><?= $model->displayName ?></a>
 		</div>
 		<div class="box-content-data reader">
 			<?= $content->getDisplaySummary( $widget->textLimit ) ?> &nbsp;&nbsp;
-			... <a href="<?= "{$siteUrl}/blog/{$model->slug}" ?>">Read More</a>
+			... <a href="<?= Url::to(["/blog/$model->slug"]) ?>">Read More</a>
 		</div>
 	</div>
 </div><hr/>

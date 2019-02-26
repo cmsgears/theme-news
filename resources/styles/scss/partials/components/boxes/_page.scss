@@ -11,6 +11,10 @@
 
 				.box-header {
 
+                    //width: 320px;
+					width: 100%;
+                    height: 220px;
+
 					.box-header-info {
 
 					}
@@ -20,7 +24,7 @@
 			.box-content {
 
 				.box-content-title {
-					font: $font-heading;
+					font-family: $font-heading;
 					font-size: $font-size-3;
 					margin: 0.75em 0;
 
@@ -40,15 +44,18 @@
 			.box-header-wrap {
 				float: left;
 				overflow: hidden;
+				width: 40%;
 
 				.bkg-element-wrap {
-					width: 320px;
+					//width: 320px;
+					width: 100%;
 					height: 220px;
 				}
 			}
 
 			.box-content {
-				padding-left: 330px;
+				//padding-left: 350px;
+				padding-left: 43%;
 			}
 		}
 
@@ -58,14 +65,14 @@
 
 				.box-header-wrap {
 
-					.bkg-element-wrap {
-						width: 160px;
-						height: 120px;
-					}
+                    .box-header {
+						//width: 160px;
+						//height: 120px;
+                    }
 				}
 
 				.box-content {
-					padding-left: 170px;
+					//padding-left: 180px;
 				}
 			}
 		}
@@ -77,10 +84,11 @@
 				.box-header-wrap {
 					float: none;
 					margin-bottom: 1.5em;
+					width: 100%;
 
-					.bkg-element-wrap {
+					.box-header {
 						width: 100%;
-						height: 120px;
+						height: 160px;
 					}
 				}
 
@@ -112,7 +120,7 @@
 					height: 160px;
 				}
 			}
-			
+
 			.box-content {
 
 				.box-content-title {
