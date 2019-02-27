@@ -1,0 +1,36 @@
+// == Basic Block ===================
+
+.block-basic {
+	background-color: $color-primary;
+	color: $color-primary-text;
+
+	.adsbygoogle {
+		text-align: center;
+	}
+}
+
+// == Error Block ===================
+
+.block-error {
+	background-color: $color-primary-l;
+	color: $color-primary-text-l;
+}
+
+
+// == Ads Block Background ===================
+
+.block {
+
+	.block-content-wrap {
+
+		.block-content {
+
+			.block-content-raw {
+
+				.adsbygoogle {
+					background-color: $color-white;
+				}
+			}
+		}
+	}
+}

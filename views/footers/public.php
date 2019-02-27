@@ -1,53 +1,46 @@
 <?php
-// Yii Imports
-use yii\helpers\Url;
+// CMG Imports
+use cmsgears\widgets\elements\Nav;
+use cmsgears\widgets\club\cms\PostWidget;
+use cmsgears\widgets\newsletter\FollowMeWidget;
 
-use widgets\categories\FeaturedCategories;
-use widgets\tags\FeaturedTags;
-use cmsgears\widgets\blog\BlogPost;
-
-$themePath	= Yii::getAlias( '@themes/news' );
+// News Imports
+use themes\news\Theme;
 ?>
-<div class="wrap-footer bkg bkg-secondary " id="footer">
-    <footer class="content-90">
-            <div class="filler-height filler-height-medium">
-            </div>    
-            <div class="row">
-                <div class="col col12x4 text text-white">
-                    <h3 class=" border-bottom">
-                        Lables
-                    </h3>
-                    <?php FeaturedTags::begin([ ]);?>
-                    <?php FeaturedTags::end() ?>
-                    
-                </div>  
-                 <div class="col col12x4 text text-white align align-center">
-                    <h3 class=" border-bottom">
-                        CATEGORY
-                    </h3>
-                         
-                     <?php FeaturedCategories::begin([ ]);?>
-                    <?php FeaturedCategories::end() ?>
-                </div>  
-                  <div class="col col12x4 text text-white align align-right">
-                    <h3 class=" border-bottom">
-                        Lables
-                    </h3>
-                      
-                      <?= BlogPost::widget([
-                'templateDir' => yii::getAlias("@templates").'/widget/blog', 
-                //'template' =>  'widget/blog/banner',
-                'limit' => 6,
-					'wrapSingle' => false,	  
-                'pagination' => false ]) ?>
-                      
-                </div>   
-            </div>    
-        </footer>   
-    <div class="filler-height filler-height-medium bkg bkg-secondary">
-    </div> 
-    
-</div>
-<footer class="footer-copyright bkg bkg-black align align-center">
-		Copyright © <?= date( 'Y' ) ?> <?= $coreProperties->getSiteName() ?>. All Rights Reserved.
-	</footer>
+<footer class="footer footer-basic footer-main">
+	<div class="footer-content row row-xlarge max-cols-100 col-filler-wrap">
+		<div class="colf colf12x8">
+			<div class="row max-cols-50">
+				<div class="footer-col col col12x6">
+					<div class="h5 col-header">Links</div>
+					<?= Nav::widget([
+						'view' => $this, 'slug' => Theme::MENU_LINKS,
+						'options' => [ 'id' => 'menu-links', 'class' => 'nav' ]
+					])?>
+				</div>
+				<div class="footer-col col col12x6">
+					<div class="h5 col-header">Featured Posts</div>
+					<?= PostWidget::widget([
+						'pagination' => false, 'defaultBanner' => true, 'limit' => 6,
+						'template' => 'avatar', 'widget' => 'featured',
+						'wrapperOptions' => [ 'class' => 'blog-posts row' ],
+						'singleOptions' => [ 'class' => 'blog-post' ]
+					])?>
+				</div>
+			</div>
+		</div>
+		<div class="footer-col col col12x4">
+			<div class="h5 col-header">Newsletter</div>
+			<div>Sign Up to receive updates from us.</div>
+			<?= FollowMeWidget::widget([
+				'wrap' => true, 'options' => [ 'class' => 'footer-newsletter-wrap' ],
+				'templateDir' => '@themeTemplates/widget/newsletter'
+			]) ?>
+		</div>
+	</div>
+</footer>
+<footer class="footer footer-copyright">
+	<div class="row row-xlarge padding padding-small-v align align-center">
+		Copyright © 2017 - <?= date( 'Y' ) ?> <?= $coreProperties->getSiteName() ?>. All Rights Reserved.
+	</div>
+</footer>

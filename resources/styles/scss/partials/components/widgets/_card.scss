@@ -1,0 +1,19 @@
+.widget-card-model {
+	background-color: $color-primary-l;
+	color: $color-primary-text-l;
+
+	.widget-content-wrap {
+
+		.widget-header-wrap {
+
+			.widget-header {
+				color: $color-secondary-text-l;
+				font: $font-heading;
+				font-size: $font-size-3;
+				padding: 1rem 0;
+				margin: 0 1.5rem;
+				border-bottom: 1px solid $color-border;
+			}
+		}
+	}
+}

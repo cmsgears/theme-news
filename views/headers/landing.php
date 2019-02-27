@@ -3,24 +3,40 @@
 use yii\helpers\Html;
 
 // CMG Imports
-use cmsgears\widgets\dnav\DynamicNav;
+use cmsgears\widgets\elements\Nav;
 
-// SF Imports
 use themes\news\Theme;
-?>
 
-<header id="header-main" class="absolute width">
-	<div class="row   clearfix">
-		<div class="colc col12x6">
-			<div id="btn-mobile-menu" class="bkg padding padding-medium bkg-secondary-d text text-white inline-block ">
-				<i class="cmti cmti-menu"> </i>
+$banner			= Yii::$app->core->site->banner;
+$headerClass	= isset( $banner ) ? 'header-basic header-landing header-banner' : 'header-basic header-landing header-banner-no';
+?>
+<header class="header <?= $headerClass ?> shadow shadow-black">
+	<?php if( isset( $banner ) ) { ?>
+		<div class="max-area bkg-image layer" style="background-image:url(<?= $banner->getFileUrl() ?>);"></div>
+		<div class="texture texture-black layer layer-1"></div>
+	<?php } ?>
+	<div class="row layer layer-2">
+		<div class="header-logo">
+			<div class="logo">
+				<?= Html::a( "<img src=\"" . Yii::getAlias( '@images' ) . "/logo.png\">", [ '/' ], null ) ?>
 			</div>
 		</div>
-		<div class="colc col12x6  ">
-			<div class=" logo  content-right-50 padding padding-medium align align-center"><?=Html::a( "<img class='fluid' src='" . Yii::getAlias( '@images' ) . "/icons/logo.png'>", [ '/' ], null )?></div>
+		<div id="mobile-actions">
+			<span id="btn-menu-mobile" class="mobile-action">
+				<i class="cmti cmti-menu"></i>
+			</span>
 		</div>
 	</div>
-    <div class="clear">
-		<?= DynamicNav::widget( [ 'view' => $this, 'slug' => Theme::MENU_FEATURED, 'options' => [ 'class' => 'nav-table uppercase' ] ] ) ?>
+	<div id="menu-mobile-wrap" class="relative">
+		<?= Nav::widget([
+			'view' => $this, 'slug' => Theme::MENU_MAIN,
+			'options' => [ 'id' => 'menu-main-mobile', 'class' => 'vnav uppercase' ]
+		])?>
 	</div>
 </header>
+<div class="menu-main-wrap row row-xlarge">
+	<?= Nav::widget([
+		'view' => $this, 'slug' => Theme::MENU_MAIN,
+		'options' => [ 'id' => 'menu-main', 'class' => 'nav uppercase' ]
+	])?>
+</div>

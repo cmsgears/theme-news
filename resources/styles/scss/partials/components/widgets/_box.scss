@@ -1,0 +1,14 @@
+// Posts Box on Landing Page
+.widget-box-home-post {
+	background-color: $color-primary-l;
+	color: $color-primary-text-l;
+	padding: 1rem 2rem;
+
+	@include responsive-max( screen-tablet-large ) {
+		padding: 0.5rem 1.5rem;
+	}
+
+	@include responsive-max( screen-mobile-large ) {
+		padding: 0 1rem;
+	}
+}

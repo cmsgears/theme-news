@@ -1,0 +1,143 @@
+.page-default {
+
+	.page-content-wrap {
+
+		.page-content-row {
+			padding: 0 5%;
+
+			.page-content {
+
+				hr {
+					border-top: 1px solid $color-border-l;
+				}
+
+				.page-content-form {
+
+					.page-form {
+						background-color:red;
+					}
+				}
+			}
+		}
+	}
+
+	@include responsive-max( screen-tablet-large ) {
+
+		.page-content-wrap {
+
+			.page-content {
+				padding: 1.5em 0;
+			}
+		}
+	}
+
+	@include responsive-max( screen-mobile-large ) {
+
+		.page-content-wrap {
+
+			.page-header-wrap {
+
+				.page-header {
+					max-height: 280px;
+				}
+			}
+
+			.page-content {
+				padding: 1em 0;
+			}
+		}
+	}
+
+	&.page-system {
+
+		.page-content-wrap {
+
+			.page-content {
+
+				.page-content-form {
+
+					margin: 0;
+
+					.page-form {
+						background-color: $color-primary-l;
+						color: $color-primary-text-l;
+						width: 520px;
+
+						.text-with-line {
+
+							.text-content {
+								background-color: $color-primary-l;
+							}
+						}
+
+						@include responsive-max( screen-tablet-small ) {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.page-model-blog {
+
+	.page-content-wrap {
+
+		.page-content {
+			background-color: $color-primary-l;
+			color: $color-primary-text-l;
+			padding: 2em;
+			margin-top: 2em;
+
+			.page-content-banner + .page-content-data {
+				margin-top: 1em;
+			}
+		}
+
+		.page-content-comments {
+			background-color: $color-primary-l;
+			color: $color-primary-text-l;
+			padding: 2em;
+			margin-top: 2em;
+		}
+
+		.page-content-disqus {
+			background-color: $color-primary-l;
+			color: $color-primary-text-l;
+			padding: 2em;
+			margin-top: 2em;
+			margin-bottom: 2em;
+		}
+
+		@include responsive-max( screen-tablet-large ) {
+
+			.page-content {
+				padding: 1.5rem;
+			}
+
+			.page-content-comments {
+				padding: 1.5rem;
+			}
+
+			.page-content-disqus {
+				padding: 1.5rem;
+			}
+		}
+
+		@include responsive-max( screen-mobile-large ) {
+
+			.page-content {
+				padding: 1rem;
+			}
+
+			.page-content-comments {
+				padding: 1rem;
+			}
+
+			.page-content-disqus {
+				padding: 1rem;
+			}
+		}
+	}
+}
