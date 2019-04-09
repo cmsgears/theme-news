@@ -9,7 +9,7 @@ $success		= $widget->success;
 $rating			= $widget->rating;
 $ratingClass	= $widget->ratingClass;
 
-$user = Yii::$app->user->getIdentity();
+$user = Yii::$app->core->getUser();
 
 $ajaxUrl		= $widget->ajaxUrl;
 $cmtApp			= $widget->cmtApp;

@@ -96,3 +96,60 @@
 		margin-top: -1.5em;
 	} */
 }
+
+.fixed-social {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	z-index: 20001;
+	width: 5%;
+	min-width: 40px;
+	background-color: $color-primary;
+	padding: 0.5em 0;
+	@include rounded-right( $size-large );
+
+	.nav-social {
+
+		li {
+
+			a {
+				color: $color-link;
+				font-size: 2em;
+				padding: 0.15em 0;
+				@include transit-all( $transit-eio, $transit-time-medium );
+
+					&:hover {
+					transform: scale(1.2);
+					color: $color-btn;
+				}
+
+			@include responsive-max( screen-tablet-large ) {
+				font-size: 1.5em;
+				padding: 0.25em 0;
+			}
+		}
+		}
+	}
+
+	@include responsive-max( screen-mobile-large ) {
+		top: unset;
+		bottom: 0;
+		width: 100%;
+		padding: 0;
+		height: 30px;
+		transform: translateY(0);
+
+		.nav-social {
+
+			li {
+				width: unset;
+				vertical-align: middle;
+
+				a {
+					padding: 0.25em;
+				}
+			}
+		}
+	}
+}

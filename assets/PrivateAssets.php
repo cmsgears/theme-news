@@ -50,17 +50,22 @@ class PrivateAssets extends AssetBundle {
 		parent::init();
 
 		$this->js[] = 'scripts/templates/private.js';
+
 		$this->js[] = 'scripts/apix/private.js';
+
 		$this->js[] = 'scripts/apps/private.js';
+
 		$this->js[] = 'scripts/apps/core/services/user.js';
 		$this->js[] = 'scripts/apps/core/controllers/main.js';
 		$this->js[] = 'scripts/apps/core/controllers/user.js';
+
 		$this->js[] = 'scripts/main.js';
 		$this->js[] = 'scripts/search.js';
 		$this->js[] = 'scripts/sliders.js';
 		$this->js[] = 'scripts/popups.js';
 
-		$this->depends[] = 'foxslider\widgets\assets\FxsAssets';
+		$this->depends[] = 'cmsgears\assets\components\DateTimeAssets';
+		$this->depends[] = 'cmsgears\assets\components\FullCalendarAssets';
 		$this->depends[] = 'themes\news\assets\vapps\CoreAssets';
 		$this->depends[] = 'themes\news\assets\vapps\NotifyAssets';
 	}

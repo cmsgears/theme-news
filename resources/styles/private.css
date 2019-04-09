@@ -3461,6 +3461,33 @@ Details: It defines the text and background colors as listed below:
 .text.text-tertiary-d {
   color: #FFFFFF !important;
 }
+.text.text-primary-b {
+  color: #F4F6F8 !important;
+}
+.text.text-primary-b-l {
+  color: #FFFFFF !important;
+}
+.text.text-primary-b-d {
+  color: #F4F6F8 !important;
+}
+.text.text-secondary-b {
+  color: #3F3F46 !important;
+}
+.text.text-secondary-b-l {
+  color: #FFFFFF !important;
+}
+.text.text-secondary-b-d {
+  color: #000000 !important;
+}
+.text.text-tertiary-b {
+  color: #0071bd !important;
+}
+.text.text-tertiary-b-l {
+  color: #EAECF1 !important;
+}
+.text.text-tertiary-b-d {
+  color: #DD5F28 !important;
+}
 .text.text-link {
   color: #1E96FF !important;
 }
@@ -9070,6 +9097,62 @@ Details: It defines the styles for footer components as listed below:
   } */
 }
 
+.fixed-social {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 20001;
+  width: 5%;
+  min-width: 40px;
+  background-color: #F4F6F8;
+  padding: 0.5em 0;
+  border-radius: 0 8px 8px 0;
+  -webkit-border-radius-top-right: 8px;
+  -webkit-border-radius-bottom-right: 8px;
+  -khtml-border-radius-top-right: 8px;
+  -khtml-border-radius-bottom-right: 8px;
+  -moz-border-radius-top-right: 8px;
+  -moz-border-radius-bottom-right: 8px;
+}
+.fixed-social .nav-social li a {
+  color: #1E96FF;
+  font-size: 2em;
+  padding: 0.15em 0;
+  -webkit-transition: all 420ms ease-in-out 0s;
+  -moz-transition: all 420ms ease-in-out 0s;
+  -ms-transition: all 420ms ease-in-out 0s;
+  -o-transition: all 420ms ease-in-out 0s;
+  transition: all 420ms ease-in-out 0s;
+}
+.fixed-social .nav-social li a:hover {
+  transform: scale(1.2);
+  color: #F3702E;
+}
+@media only screen and (max-width: 1024px) {
+  .fixed-social .nav-social li a {
+    font-size: 1.5em;
+    padding: 0.25em 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .fixed-social {
+    top: unset;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    height: 30px;
+    transform: translateY(0);
+  }
+  .fixed-social .nav-social li {
+    width: unset;
+    vertical-align: middle;
+  }
+  .fixed-social .nav-social li a {
+    padding: 0.25em;
+  }
+}
+
 /**********************************************************************
 Description: The Default Sidebar with/without background image with default alignment.
 
@@ -10231,14 +10314,45 @@ Usage: Boxes can be used to to show data of models.
 .box-home-wrap .box-home .box-content-split .box-header-wrap {
   float: left;
   overflow: hidden;
-  width: 40%;
+  width: 300px;
 }
 .box-home-wrap .box-home .box-content-split .box-header-wrap .bkg-element-wrap {
   width: 100%;
   height: 220px;
 }
 .box-home-wrap .box-home .box-content-split .box-content {
-  padding-left: 43%;
+  padding-left: 330px;
+}
+.box-home-wrap .box-home .box-content-split .box-footer .widget-social-share {
+  padding: 0.25em 0;
+}
+.box-home-wrap .box-home .box-content-split .box-footer .widget-social-share .nav li {
+  padding: 0.25em;
+  border: 1px solid #1E96FF;
+  -webkit-border-radius: 100%;
+  -khtml-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-transition: all 420ms ease-in-out 0s;
+  -moz-transition: all 420ms ease-in-out 0s;
+  -ms-transition: all 420ms ease-in-out 0s;
+  -o-transition: all 420ms ease-in-out 0s;
+  transition: all 420ms ease-in-out 0s;
+}
+.box-home-wrap .box-home .box-content-split .box-footer .widget-social-share .nav li:hover {
+  border: 1px solid #F3702E;
+  transform: scale(1.2);
+}
+.box-home-wrap .box-home .box-content-split .box-footer .widget-social-share .nav li:hover a {
+  color: #F3702E;
+}
+@media only screen and (max-width: 1024px) {
+  .box-home-wrap .box-home .box-content-split .box-header-wrap {
+    width: 40%;
+  }
+  .box-home-wrap .box-home .box-content-split .box-content {
+    padding-left: 43%;
+  }
 }
 @media only screen and (max-width: 480px) {
   .box-home-wrap .box-home .box-content-split .box-header-wrap {
@@ -10256,22 +10370,23 @@ Usage: Boxes can be used to to show data of models.
 }
 
 .widget-box-search-post .box-page-search {
-  height: 300px;
   margin-bottom: 1em;
   background-color: #FFFFFF;
   color: #3F3F46;
   padding: 1rem;
 }
+.widget-box-search-post .box-page-search .box-content-wrap {
+  height: 415px;
+}
 .widget-box-search-post .box-page-search .box-content-wrap .box-header-wrap {
   overflow: hidden;
   margin-bottom: 1em;
 }
-.widget-box-search-post .box-page-search .box-content-wrap .box-header-wrap .bkg-element-wrap {
-  width: 100%;
+.widget-box-search-post .box-page-search .box-content-wrap .box-header-wrap .box-header {
   height: 160px;
 }
 .widget-box-search-post .box-page-search .box-content-wrap .box-content .box-content-title {
-  font: Fira Sans Medium, Sans-Serif, Arial;
+  font-family: Fira Sans Medium, Sans-Serif, Arial;
   font-size: 1.17em;
   margin: 0.5em 0;
 }
@@ -10281,21 +10396,40 @@ Usage: Boxes can be used to to show data of models.
 .widget-box-search-post .box-page-search .box-content-wrap .box-content .box-content-title a:hover {
   color: #1E96FF;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
   .widget-box-search-post .box-page-search {
-    height: 280px;
+    width: 31.33332%;
   }
-  .widget-box-search-post .box-page-search .box-header-wrap .bkg-element-wrap {
-    width: 100%;
+  .widget-box-search-post .box-page-search .box-content-wrap {
+    height: 350px;
+  }
+  .widget-box-search-post .box-page-search .box-content-wrap .box-header-wrap .box-header {
+    height: 120px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .widget-box-search-post .box-page-search .box-content-wrap {
+    height: 340px;
+  }
+  .widget-box-search-post .box-page-search .box-content-wrap .box-header-wrap .box-header {
+    height: 130px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .widget-box-search-post .box-page-search .box-content-wrap {
+    height: 355px;
+  }
+  .widget-box-search-post .box-page-search .box-content-wrap .box-header-wrap .box-header {
     height: 120px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .widget-box-search-post .box-page-search {
-    height: 260px;
+  .widget-box-search-post .box-page-search .box-content-wrap {
+    height: auto;
   }
-  .widget-box-search-post .box-page-search .box-header-wrap .bkg-element-wrap {
-    width: 100%;
+}
+@media only screen and (max-width: 320px) {
+  .widget-box-search-post .box-page-search .box-content-wrap .box-header-wrap .box-header {
     height: 80px;
   }
 }

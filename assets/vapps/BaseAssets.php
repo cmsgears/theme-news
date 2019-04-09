@@ -40,6 +40,7 @@ class BaseAssets extends \yii\web\AssetBundle {
 	public $js = [
 		'apps/core/base.js',
 		'apps/core/grid.js',
+		'apps/core/autoload.js',
 		'apps/core/controllers/site.js',
 		'apps/core/controllers/province.js',
 		'apps/core/controllers/region.js',

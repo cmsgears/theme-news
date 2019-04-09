@@ -9,4 +9,4 @@ use cmsgears\files\widgets\AvatarUploader;
 	'model' => $user->avatar,
 	'postaction' => true, 'cmtcontroller' => 'default', 'cmtaction' => 'avatar',
 	'postactionurl' => Url::toRoute( [ 'apix/user/avatar'], true )
-]);?>
+])?>

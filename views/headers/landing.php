@@ -18,7 +18,7 @@ $headerClass	= isset( $banner ) ? 'header-basic header-landing header-banner' : 
 	<div class="row layer layer-2">
 		<div class="header-logo">
 			<div class="logo">
-				<?= Html::a( "<img src=\"" . Yii::getAlias( '@images' ) . "/logo.png\">", [ '/' ], null ) ?>
+				<?= Html::a( "<img src=\"$resourceUrl/images/logo.png\">", [ '/' ], null ) ?>
 			</div>
 		</div>
 		<div id="mobile-actions">
