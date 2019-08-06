@@ -32,7 +32,7 @@ $resourceUrl	= $coreProperties->getResourceUrl();
 		<?php
 			if( isset( $user ) ) {
 
-				//include "$themePath/views/headers/private.php";
+				include "$themePath/views/headers/private.php";
 			}
 			else {
 

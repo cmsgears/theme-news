@@ -2,7 +2,8 @@
 
 jQuery( document ).ready( function() {
 
-	var app	= cmt.api.root.getApplication( 'core' );
+	var cmtApp	= cmt.api.root.getApplication( 'core' );
+	var newsApp	= cmt.api.root.getApplication( 'newsCore' );
 
 	// Register Controllers
 });

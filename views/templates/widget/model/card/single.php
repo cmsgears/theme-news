@@ -28,7 +28,7 @@ $mbanner	= $defaultBanner ? SiteProperties::getInstance()->getPageBanner() : nul
 $mbannerUrl	= CodeGenUtil::getSmallUrl( $content->banner, [ 'image' => $mbanner ] );
 
 $mlazyBanner	= isset( $mbannerObj ) ? true : false;
-$mbkgUrl		= isset( $mbannerUrl ) ? $mbannerUrl : $mbkgUrl;
+$mbkgUrl		= isset( $mbannerUrl ) ? $mbannerUrl : null;
 
 $mbkgLazyClass	= $mlazyBanner ? 'cmt-lazy-img' : null;
 $mbkgUrl		= $mlazyBanner ? $mbannerObj->getSmallPlaceholderUrl() : $mbkgUrl;

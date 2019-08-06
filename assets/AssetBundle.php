@@ -60,6 +60,7 @@ class AssetBundle extends \yii\web\AssetBundle {
 		// apps
         'scripts/apps/public.js',
 
+		'scripts/apps/core/base.js',
 		'scripts/apps/core/autoload.js',
 		'scripts/apps/core/controllers/site.js'
 	];
@@ -87,10 +88,12 @@ class AssetBundle extends \yii\web\AssetBundle {
 		'cmsgears\assets\components\MCustomScrollbar',
 		//'cmsgears\assets\components\NoUiSlider',
 		//'cmsgears\assets\components\ProgressBar',
-		//'cmsgears\assets\libraries\ChartJs',
+		'cmsgears\assets\libraries\ChartJs',
 		'cmsgears\assets\cmgtools\Velocity',
-		'themes\news\assets\vapps\BaseAssets',
-		'themes\news\assets\vapps\FormAssets'
+		'cmsgears\assets\components\IntlTelInput',
+		'cmsgears\assets\vapps\BaseAssets',
+		'cmsgears\assets\vapps\FormAssets',
+		'cmsgears\assets\vapps\NotifyAssets'
     ];
 
     // Protected --------------
