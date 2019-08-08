@@ -1781,7 +1781,7 @@ Notes:
 }
 
 .pattern.pattern-default {
-  background-image: url("../images/pattern-default.png");
+  background-image: url("../images/news/pattern-default.png");
 }
 
 /**********************************************************************
@@ -6500,7 +6500,7 @@ blockquote:after {
   list-style-type: decimal;
 }
 .list.style-image-default {
-  list-style-image: url("../images/list-default.jpg");
+  list-style-image: url("../images/news/list-default.jpg");
 }
 .list.position-inside {
   list-style-position: inside;
@@ -6671,15 +6671,15 @@ Details: It defines the custom element styles as listed below:
 }
 
 /**********************************************************************
-Description: It defines the styles of custom elements available in Breeze Framework. Most of 
-these elements are also dependent on Velocity. Though the JS implementation can also be 
+Description: It defines the styles of custom elements available in Breeze Framework. Most of
+these elements are also dependent on Velocity. Though the JS implementation can also be
 done for other standard libraries.
 
 Dependencies: variables, mixins, transitions, transformation
 
 Details: It defines the custom element styles as listed below:
 
-1. Select - The custom select allows user to select an item. It override the default select ui 
+1. Select - The custom select allows user to select an item. It override the default select ui
 dependent on browsers. It depends on cmtSelect jQuery plugin available in Velocity.
 ***********************************************************************/
 .cmt-select-wrap {
@@ -6711,6 +6711,7 @@ dependent on browsers. It depends on cmtSelect jQuery plugin available in Veloci
   white-space: nowrap;
   text-align: left;
   color: #3F3F46;
+  vertical-align: middle;
 }
 .cmt-select-wrap .cmt-select .cmt-selected .s-icon {
   position: absolute;
@@ -6813,7 +6814,7 @@ dependent on browsers. It depends on cmtSelect jQuery plugin available in Veloci
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  padding: 0.5em;
+  padding: 0.3em;
   cursor: pointer;
   padding-right: 1.8em;
   text-shadow: 0 0 0 #000;
@@ -6832,7 +6833,7 @@ dependent on browsers. It depends on cmtSelect jQuery plugin available in Veloci
   box-shadow: none;
   outline: none;
   font-size: 1em;
-  padding-top: 0.70em;
+  padding-top: 0.60em;
   padding-left: 0.20em;
   padding-right: 0.60em;
   margin: 0;
@@ -7870,11 +7871,15 @@ label {
   color: #E6E6E6 !important;
 }
 
-input[type="submit"], input[type="button"], button, .btn, .cmt-select-wrap {
+input[type="submit"], input[type="button"], button, .btn {
   line-height: 1.4em;
 }
 
-label, input[type="text"], input[type="email"], input[type="password"], textarea, select {
+label, input[type="text"], input[type="email"], input[type="password"], textarea {
+  line-height: 1.4em;
+}
+
+select, .cmt-select-wrap .cmt-selected {
   line-height: 1.4em;
 }
 
@@ -8138,7 +8143,10 @@ label, input[type="text"], input[type="email"], input[type="password"], textarea
     padding-left: 0;
   }
 }
-.form input[type="text"], .form input[type="email"], .form input[type="password"], .form textarea, .form select, .form .icon-picker-wrap {
+.form input[type="text"], .form input[type="email"], .form input[type="password"], .form textarea, .form select, .form .icon-picker-wrap, .form .btn, .form .btn-icon {
+  margin-bottom: 0.5rem;
+}
+.form .frm-element-25, .form .frm-element-50, .form .frm-element-75, .form .frm-element-small, .form .frm-element-medium, .form .frm-element-large, .form .frm-element-xlarge {
   margin-bottom: 0.5rem;
 }
 .form .frm-icon-element .cmti, .form .frm-icon-element .icon, .form .frm-icon-element .fa {
@@ -11811,7 +11819,7 @@ Details: It defines the styles for foxslider components as listed below:
   width: 48px;
   position: relative;
   top: 45%;
-  background-image: url("../images//icons/arrows.png");
+  background-image: url("../images/news//icons/arrows.png");
   background-repeat: none;
   background-position: 0px 0px;
 }
@@ -11849,7 +11857,7 @@ Details: It defines the styles for foxslider components as listed below:
   margin-right: 5px;
   margin-top: 3px;
   display: inline-block;
-  background-image: url("../images/icons/bullets.png");
+  background-image: url("../images/news/icons/bullets.png");
   background-position: -16px 0px;
 }
 .fx-slider-basic .bullets .bullet:hover {
@@ -11938,7 +11946,7 @@ Details: It defines the styles for foxslider components as listed below:
   width: 48px;
   position: relative;
   top: 45%;
-  background-image: url("../images//icons/arrows.png");
+  background-image: url("../images/news//icons/arrows.png");
   background-repeat: none;
   background-position: 0px 0px;
 }
@@ -11976,7 +11984,7 @@ Details: It defines the styles for foxslider components as listed below:
   margin-right: 5px;
   margin-top: 3px;
   display: inline-block;
-  background-image: url("../images/icons/bullets.png");
+  background-image: url("../images/news/icons/bullets.png");
   background-position: -16px 0px;
 }
 .fx-slider-regular .bullets .bullet:hover {
