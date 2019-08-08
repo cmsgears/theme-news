@@ -15,7 +15,7 @@ $title		= $widget->title;
 $success	= $widget->success;
 $rating		= $widget->rating;
 
-$user = Yii::$app->user->getIdentity();
+$user = Yii::$app->core->getUser();
 
 $ratingField = new FormField( [ 'name' => 'rating', 'label' => 'rating', 'type' => FormField::TYPE_RATING, 'htmlOptions' => [ 'class' => 'cmt-rating rating-leaf-tertiary' ] ] );
 ?>

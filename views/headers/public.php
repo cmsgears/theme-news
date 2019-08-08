@@ -12,10 +12,10 @@ use themes\news\Theme;
 	<div class="row">
 		<div class="header-logo">
 			<div class="logo">
-				<?= Html::a( "<img src=\"" . Yii::getAlias( '@images' ) . "/logo.png\">", [ '/' ], null ) ?>
+				<?= Html::a( "<img src=\"$resourceUrl/images/logo.png\">", [ '/' ], null ) ?>
 			</div>
 			<div class="logo-small">
-				<?= Html::a( "<img src=\"" . Yii::getAlias( '@images' ) . "/logo-small.png\">", [ '/' ], null ) ?>
+				<?= Html::a( "<img src=\"$resourceUrl/images/logo-small.png\">", [ '/' ], null ) ?>
 			</div>
 		</div>
 		<?= Nav::widget([

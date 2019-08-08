@@ -9,14 +9,12 @@ jQuery( document ).ready( function() {
 
 var news = news || {};
 
-news.core = news.core || {};
-
 // == Controller Namespace ================
 
-news.core.controllers = news.core.controllers || {};
+news.controllers = news.controllers || {};
 
 // == Service Namespace ===================
 
-news.core.services = news.core.services || {};
+news.services = news.services || {};
 
 // == Additional Methods ==================

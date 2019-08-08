@@ -43,4 +43,18 @@ use themes\news\Theme;
 	<div class="row row-xlarge padding padding-small-v align align-center">
 		Copyright © 2017 - <?= date( 'Y' ) ?> <?= $coreProperties->getSiteName() ?>. All Rights Reserved.
 	</div>
+	<div class="fixed-social align align-center">
+		<ul class="vnav nav-social ">
+			<li class="uppercase text text-tiny h6">Share on</li>
+			<?php $link = Yii::$app->request->absoluteUrl; ?>
+			<li><a class="fab fa-reddit" target="_blank" href="https://reddit.com/submit?url=<?= $link ?>" title="Reddit"></a></li>
+			<li><a class="fab fa-facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=<?= $link ?>" title="Facebook"></a></li>
+			<li><a class="fab fa-twitter" target="_blank" href="https://twitter.com/share?url=<?= $link ?>" title="Twitter"></a></li>
+			<li><a class="fab fa-linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?url=<?= $link ?>" title="LinkedIn"></a></li>
+			<li><a class="fab fa-pinterest" target="_blank" href="http://pinterest.com/pin/create/link/?url=<?= $link ?>" title="Pinterest"></a></li>
+			<!--<li><a class="fab fa-medium" target="_blank" href="" title="Medium"></a></li>-->
+			<li><a class="fab fa-mix" target="_blank" href="http://mix.com/submit?url=<?= $link ?>" title="Mix"></a></li>
+			<li><a class="fab fa-tumblr" target="_blank" href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=<?= $link ?>" title="Tumblr"></a></li>
+		</ul>
+	</div>
 </footer>

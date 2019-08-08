@@ -44,18 +44,43 @@
 			.box-header-wrap {
 				float: left;
 				overflow: hidden;
-				width: 40%;
+				width: 300px;
 
 				.bkg-element-wrap {
-					//width: 320px;
 					width: 100%;
 					height: 220px;
 				}
 			}
 
 			.box-content {
-				//padding-left: 350px;
-				padding-left: 43%;
+				padding-left: 330px;
+			}
+
+			.box-footer {
+
+				.widget-social-share {
+
+					padding: 0.25em 0;
+
+					.nav {
+
+						li {
+							padding: 0.25em;
+							border: 1px solid $color-link;
+							@include rounded( 100% );
+							@include transit-all( $transit-eio, $transit-time-medium );
+
+							&:hover {
+								border: 1px solid $color-btn;
+								transform: scale(1.2);
+
+								a {
+									color: $color-btn;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -65,14 +90,11 @@
 
 				.box-header-wrap {
 
-                    .box-header {
-						//width: 160px;
-						//height: 120px;
-                    }
+                    width: 40%;
 				}
 
 				.box-content {
-					//padding-left: 180px;
+					padding-left: 43%;
 				}
 			}
 		}
@@ -103,20 +125,19 @@
 .widget-box-search-post {
 
 	.box-page-search {
-		height: 300px;
 		margin-bottom: 1em;
 		background-color: $color-primary-l;
 		color: $color-primary-text-l;
 		padding: 1rem;
 
 		.box-content-wrap {
+			height: 415px;
 
 			.box-header-wrap {
 				overflow: hidden;
 				margin-bottom: 1em;
 
-				.bkg-element-wrap {
-					width: 100%;
+				.box-header {
 					height: 160px;
 				}
 			}
@@ -124,7 +145,7 @@
 			.box-content {
 
 				.box-content-title {
-					font: $font-heading;
+					font-family: $font-heading;
 					font-size: $font-size-5;
 					margin: 0.5em 0;
 
@@ -139,26 +160,65 @@
 			}
 		}
 
+		@include responsive( screen-desktop-small ) {
+			width: 31.33332%;
+
+			.box-content-wrap {
+				height: 350px;
+
+				.box-header-wrap {
+
+					.box-header {
+						height: 120px;
+					}
+				}
+			}
+		}
+
 		@include responsive-max( screen-tablet-large ) {
-			height: 280px;
 
-			.box-header-wrap {
+			.box-content-wrap {
+				height: 340px;
 
-				.bkg-element-wrap {
-					width: 100%;
-					height: 120px;
+				.box-header-wrap {
+
+					.box-header {
+						height: 130px;
+					}
+				}
+			}
+		}
+
+		@include responsive-max( screen-tablet-small ) {
+
+			.box-content-wrap {
+				height: 355px;
+
+				.box-header-wrap {
+
+					.box-header {
+						height: 120px;
+					}
 				}
 			}
 		}
 
 		@include responsive-max( screen-mobile-large ) {
-			height: 260px;
 
-			.box-header-wrap {
+			.box-content-wrap {
+				height: auto;
+			}
+		}
 
-				.bkg-element-wrap {
-					width: 100%;
-					height: 80px;
+		@include responsive-max( screen-mobile-small ) {
+
+			.box-content-wrap {
+
+				.box-header-wrap {
+
+					.box-header {
+						height: 80px;
+					}
 				}
 			}
 		}

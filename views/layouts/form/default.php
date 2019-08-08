@@ -15,6 +15,7 @@ $this->registerAssetBundle( 'public' );
 $coreProperties = $this->context->getCoreProperties();
 $themePath		= Yii::getAlias( '@themes/news' );
 $user			= Yii::$app->core->getUser();
+$resourceUrl	= $coreProperties->getResourceUrl();
 ?>
 <?php $this->beginPage(); ?>
 <!DOCTYPE html>
@@ -31,7 +32,7 @@ $user			= Yii::$app->core->getUser();
 		<?php
 			if( isset( $user ) ) {
 
-				//include "$themePath/views/headers/private.php";
+				include "$themePath/views/headers/private.php";
 			}
 			else {
 

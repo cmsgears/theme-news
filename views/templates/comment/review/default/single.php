@@ -7,7 +7,7 @@ use cmsgears\core\common\utilities\CodeGenUtil;
 use cmsgears\core\common\utilities\DateUtil;
 
 $avatar		= SiteProperties::getInstance()->getDefaultAvatar();
-$avatarUrl	= isset( $model->creator ) ? CodeGenUtil::getFileUrl( $model->creator->avatar, [ 'image' => $avatar ] ) : Yii::getAlias( "@images" ) . "/$avatar";
+$avatarUrl	= isset( $model->creator ) ? CodeGenUtil::getFileUrl( $model->creator->avatar, [ 'image' => $avatar ] ) : "$resourceUrl/images/$avatar";
 
 $rating			= $model->rating;
 $commentDate	= DateUtil::getDateFromDateTime( $model->createdAt );

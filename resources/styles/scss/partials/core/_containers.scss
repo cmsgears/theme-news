@@ -6,10 +6,27 @@
 	}
 }
 
-.container-main-landing {
-	margin-top: 0;
+.container-private {
+	width: 100%;
+	padding-left: 225px;
 
-	@include responsive-max( screen-tablet-large ) {
-		margin-top: 0px;
+	@include responsive-max( screen-tablet-small ) {
+		padding-left: 0;
+	}
+}
+
+.header-private + .container-public {
+	margin-top: 60px;
+}
+
+.sidebar-main + .container-private {
+	margin-top: 60px;
+}
+
+.sidebar-main-micro + .container-private {
+	padding-left: 70px;
+
+	@include responsive-max( screen-tablet-small ) {
+		padding-left: 0;
 	}
 }

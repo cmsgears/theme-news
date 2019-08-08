@@ -9,7 +9,7 @@ $success		= $widget->success;
 $rating			= $widget->rating;
 $ratingClass	= $widget->ratingClass;
 
-$user = Yii::$app->user->getIdentity();
+$user = Yii::$app->core->getUser();
 
 $ajaxUrl		= $widget->ajaxUrl;
 $cmtApp			= $widget->cmtApp;
@@ -33,7 +33,7 @@ $cmtAction		= $widget->cmtAction;
 					Write Us
 				</div>
 				<div class="margin margin-small-v">
-					<textarea name="ModelComment[content]" rows="5"></textarea>
+					<textarea name="Comment[content]" rows="5"></textarea>
 					<span class="error" cmt-error="content"></span>
 				</div>
 			</div>
@@ -43,7 +43,7 @@ $cmtAction		= $widget->cmtAction;
 				</div>
 				<div class="margin margin-small-v">
 					<?= Yii::$app->formDesigner->getRatingField(
-						[ 'modelName' => 'ModelComment', 'fieldName' => 'rating', 'class' => $ratingClass ]
+						[ 'modelName' => 'Comment', 'fieldName' => 'rating', 'class' => $ratingClass ]
 					)?>
 					<span class="error" cmt-error="rating"></span>
 				</div>
@@ -57,8 +57,8 @@ $cmtAction		= $widget->cmtAction;
 				<div class="filler-height"> </div>
 			</div>
 
-			<input type="hidden" name="ModelComment[name]" value="<?= $user->getName() ?>" />
-			<input type="hidden" name="ModelComment[email]" value="<?= $user->email ?>" />
+			<input type="hidden" name="Comment[name]" value="<?= $user->getName() ?>" />
+			<input type="hidden" name="Comment[email]" value="<?= $user->email ?>" />
 		</div>
 	<?php } ?>
 </div>

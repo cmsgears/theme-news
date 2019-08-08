@@ -17,6 +17,7 @@ $this->registerAssetBundle( 'public' );
 $coreProperties = $this->context->getCoreProperties();
 $themePath		= Yii::getAlias( '@themes/news' );
 $user			= Yii::$app->core->getUser();
+$resourceUrl	= $coreProperties->getResourceUrl();
 ?>
 <?php $this->beginPage(); ?>
 <!DOCTYPE html>
