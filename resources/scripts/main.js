@@ -102,7 +102,7 @@ function initCmgTools() {
 	jQuery( '.cmt-grid-data' ).cmtGrid();
 
 	// Collapsible Menu
-	jQuery( '#sidebar-main' ).cmtCollapsibleMenu();
+	jQuery( '.cmt-menu-collapsible' ).cmtCollapsibleMenu();
 
 	// Actions
 	jQuery( '.cmt-actions' ).cmtActions();
@@ -117,7 +117,7 @@ function initCmgTools() {
 	jQuery( '.cmt-timepicker' ).cmtTimePicker();
 
 	// Login & Register
-	jQuery( '#popup-login' ).cmtLoginRegister();
+	jQuery( '.cmt-login' ).cmtLoginRegister();
 
 	// Intl Tel Input
 	cmt.utils.intltel.initIntlTelInput( 'us' );
@@ -145,7 +145,7 @@ function initListeners() {
 	jQuery( '.cscroller' ).mCustomScrollbar( { autoHideScrollbar: true } );
 
 	// Auto save checkbox action
-	jQuery( '.cmt-checkbox input' ).on( 'input', function() {
+	jQuery( '.cmt-checkbox-auto input' ).on( 'input', function() {
 
 		jQuery( this ).parent().find( '.cmt-click' ).click();
 	});
